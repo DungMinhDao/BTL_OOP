@@ -1,7 +1,5 @@
 package thongtin;
 
-import java.util.Hashtable;
-
 public class Giao_dich {
     private float khoi_luong_khop_lenh, khoi_luong_thoa_thuan, gia_tri_khop_lenh, gia_tri_thoa_thuan;
 
