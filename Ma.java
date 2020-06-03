@@ -1,3 +1,5 @@
+import thongtin.Giao_dich;
+
 import java.util.Date;
 
 public class Ma {
@@ -5,13 +7,19 @@ public class Ma {
     private Gia gia;
     private Giao_dich giao_dich;
     private Date thoi_gian;
-
-    public Ma(Gia gia, Giao_dich giao_dich, Date thoi_gian) {
+    private String ten_ma;
+    
+    public Ma(Gia gia, Giao_dich giao_dich, Date thoi_gian, String ten_ma) {
         this.gia = gia;
         this.giao_dich = giao_dich;
         this.thoi_gian = thoi_gian;
+        this.ten_ma = ten_ma
     }
 
+    public String getTen_ma() {
+        return ten_ma;
+    }
+    
     public Gia getGia() {
         return gia;
     }
