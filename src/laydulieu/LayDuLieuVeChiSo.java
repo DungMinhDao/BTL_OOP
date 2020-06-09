@@ -1,6 +1,7 @@
 package laydulieu;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.ParseException;
@@ -12,15 +13,14 @@ import thongtin.*;
 
 public class LayDuLieuVeChiSo {
     private static final String COMMA = ","; // Split by comma
-    private ArrayList<ChiSo> danhSachMa;
-    public static LayDuLieuVeChiSo layMa() {
-        LayDuLieuVeChiSo layDuLieuVeChiSo = new LayDuLieuVeChiSo();
-        layDuLieuVeChiSo.danhSachMa = new ArrayList<>();
+    private ArrayList<ChiSo> danhSachChiSo;
+    public void layMa(File fn) {
+        this.danhSachChiSo = new ArrayList<>();
         BufferedReader br = null;
         try {
             String line;
             SimpleDateFormat formatter1 = new SimpleDateFormat("dd/MM/yyyy");
-            br = new BufferedReader(new FileReader("test.csv"));
+            br = new BufferedReader(new FileReader(fn));
             while (true) {
                 line = br.readLine();
                 if (line != null) {
@@ -34,12 +34,12 @@ public class LayDuLieuVeChiSo {
                     float thapNhat = Float.parseFloat(splitData[7]);
                     float thayDoiDiem = Float.parseFloat(splitData[9]);
                     float tiLeThayDoi = Float.parseFloat(splitData[10]);
-                    float khoiLuongKhopLenh = Float.parseFloat(splitData[11]);
-                    float giaTriKhopLenh = Float.parseFloat(splitData[12]);
-                    float khoiLuongThoaThuan = Float.parseFloat(splitData[13]);
-                    float giaTriThoaThuan = Float.parseFloat(splitData[14]);
+                    long khoiLuongKhopLenh = Long.parseLong(splitData[11]);
+                    long giaTriKhopLenh = Long.parseLong(splitData[12]);
+                    long khoiLuongThoaThuan = Long.parseLong(splitData[13]);
+                    long giaTriThoaThuan = Long.parseLong(splitData[14]);
 
-                    layDuLieuVeChiSo.danhSachMa.add(
+                    this.danhSachChiSo.add(
                             new ChiSo(new Gia(thamChieu, moCua, dongCua, caoNhat, thapNhat, thayDoiDiem, tiLeThayDoi)
                                     , new GiaoDich(khoiLuongKhopLenh, khoiLuongThoaThuan, giaTriKhopLenh, giaTriThoaThuan)
                                     , date, tenMa));
@@ -56,6 +56,5 @@ public class LayDuLieuVeChiSo {
                 crunchifyException.printStackTrace();
             }
         }
-        return layDuLieuVeChiSo;
     }
 }
