@@ -7,8 +7,9 @@ public class NhomNganh {
     private String tenNhomNganh;
     private float tongThayDoi = 0;
 
-    public NhomNganh(ArrayList<String> tenMa, String tenNhomNganh) {
-        this.tenMa = tenMa;
+    public NhomNganh(String tenMaDauTien, String tenNhomNganh) {
+        this.tenMa = new ArrayList<String>();
+        addMa(tenMaDauTien);
         this.tenNhomNganh = tenNhomNganh;
     }
 
