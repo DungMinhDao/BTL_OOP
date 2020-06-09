@@ -17,12 +17,12 @@ public class Mau4 extends MauCau  {
 
     @Override
     public void thuThapCau() {
-        mau1();
-        mau2();
-        mau3();
+        cau1();
+        cau2();
+        cau3();
     }
 
-    public void mau1(){
+    public void cau1(){
         String s = "Trong nhóm bluechips, ";
         for(int i = 0; i < nhomBlueChipsTang.size(); ++i){
             if(i == 3) {
@@ -50,7 +50,7 @@ public class Mau4 extends MauCau  {
         tapCau.add(s);
     }
 
-    public void mau2(){
+    public void cau2(){
         if(nhomBlueChipsTang.size() < 5){
             return;
         }
@@ -62,7 +62,7 @@ public class Mau4 extends MauCau  {
         tapCau.add(s);
     }
 
-    public void mau3(){
+    public void cau3(){
         if(nhomBlueChipsTang.size() >= 3 || nhomBlueChipsGiam.size() >= 3){
             return;
         }
