@@ -8,10 +8,11 @@ public class MaChungKhoan {
     Gia gia;
     GiaoDich giaoDich;
 
-    public MaChungKhoan(String tenMa, String tenCongTi, Gia gia, GiaoDich giaoDich){
+    public MaChungKhoan(String tenMa, String tenCongTi, Gia gia, GiaoDich giaoDich, LocalDate thoiGian){
         this.tenMa = tenMa;
         this.gia = gia;
         this.giaoDich = giaoDich;
+        this.thoiGian = thoiGian;
     }
 
     public String getTenMa() {
