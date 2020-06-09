@@ -1,5 +1,8 @@
 package laydulieu;
 
+import thongtin.NhomNganh;
+import thongtin.ThongTin;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -9,10 +12,7 @@ import java.util.HashMap;
 
 public class LayDuLieuVeCongTi {
     private static final String COMMA = ","; // Split by comma
-    HashMap<String,String> hm ;
-    public static LayDuLieuVeCongTi layMaCongTi(File fn){
-        LayDuLieuVeCongTi layDuLieuVeCongTi= new LayDuLieuVeCongTi();
-        layDuLieuVeCongTi.hm = new HashMap<String, String>();
+    public static void layMaCongTi(File fn){
         BufferedReader br = null;
         try {
             String line;
@@ -23,7 +23,8 @@ public class LayDuLieuVeCongTi {
                     String[] splitData = line.split(COMMA);
                     String tenMa = splitData[1];
                     String tenCongTi = splitData[2];
-                    layDuLieuVeCongTi.hm.put(tenMa,tenCongTi);
+                    String tenNhomNganh = splitData[3];
+                    ThongTin.maChungKhoanHashMap.get(tenMa).setTenCongTi(tenCongTi);
                 } else break;
             }
 
@@ -37,12 +38,5 @@ public class LayDuLieuVeCongTi {
                 crunchifyException.printStackTrace();
             }
         }
-        return layDuLieuVeCongTi;
     }
-
-    public static void main(String[] args) {
-        layMaCongTi(new File ("test4.csv")).hm.forEach((keyString, valueString) -> System.out.println(
-                "Key = " + keyString + ", value = " + valueString));
-    }
-
 }
