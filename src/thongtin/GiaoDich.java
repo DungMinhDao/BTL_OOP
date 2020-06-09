@@ -1,39 +1,41 @@
 package thongtin;
 
 public class GiaoDich {
-    private float khoiLuongKhopLenh, khoiLuongThoaThuan, giaTriKhopLenh, giaTriThoaThuan;
+    private long khoiLuongKhopLenh, khoiLuongThoaThuan, giaTriKhopLenh, giaTriThoaThuan;
 
-    public GiaoDich(float khoiLuongKhopLenh, float khoiLuongThoaThuan, float giaTriKhopLenh, float giaTriThoaThuan){
+    public GiaoDich(long khoiLuongKhopLenh, long khoiLuongThoaThuan, long giaTriKhopLenh, long giaTriThoaThuan){
         this.setKhopLenh(khoiLuongKhopLenh, giaTriKhopLenh);
         this.setThoaThuan(khoiLuongThoaThuan, giaTriThoaThuan);
     }
 
-    public void setKhopLenh(float khoi_luong_khop_lenh, float gia_tri_khop_lenh){
-        this.khoiLuongKhopLenh = khoi_luong_khop_lenh;
-        this.giaTriKhopLenh = gia_tri_khop_lenh;
+    public void setKhopLenh(long khoiLuongKhopLenh, long giaTriKhopLenh){
+        this.khoiLuongKhopLenh = khoiLuongKhopLenh;
+        this.giaTriKhopLenh = giaTriKhopLenh;
     }
-    public void setThoaThuan(float khoi_luong_thoa_thuan, float gia_tri_thoa_thuan) {
-        this.khoiLuongThoaThuan = khoi_luong_thoa_thuan;
-        this.giaTriThoaThuan = gia_tri_thoa_thuan;
+    public void setThoaThuan(long khoiLuongThoaThuan, long giaTriThoaThuan) {
+        this.khoiLuongThoaThuan = khoiLuongThoaThuan;
+        this.giaTriThoaThuan = giaTriThoaThuan;
     }
 
-    public float getKhoiLuongKhopLenh(){
+
+    public long tongKhoiLuong(){
+        return getKhoiLuongKhopLenh() + getKhoiLuongThoaThuan();
+    }
+    public long tongGiaTri(){
+        return getGiaTriKhopLenh() + getGiaTriThoaThuan();
+    }
+
+    public long getKhoiLuongKhopLenh(){
         return khoiLuongKhopLenh;
     }
-    public float getGiaTriKhopLenh(){
+    public long getGiaTriKhopLenh(){
         return giaTriKhopLenh;
     }
-    public float getKhoiLuongThoaThuan(){
+    public long getKhoiLuongThoaThuan(){
         return khoiLuongThoaThuan;
     }
-    public float getGiaTriThoaThuan(){
+    public long getGiaTriThoaThuan(){
         return giaTriThoaThuan;
     }
 
-    public float tongKhoiLuong(){
-        return getKhoiLuongKhopLenh() + getKhoiLuongThoaThuan();
-    }
-    public float tongGiaTri(){
-        return getGiaTriKhopLenh() + getGiaTriThoaThuan();
-    }
 }
