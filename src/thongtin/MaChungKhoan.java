@@ -10,7 +10,6 @@ public class MaChungKhoan {
 
     public MaChungKhoan(String tenMa, String tenCongTi, Gia gia, GiaoDich giaoDich){
         this.tenMa = tenMa;
-        this.tenCongTi = tenCongTi;
         this.gia = gia;
         this.giaoDich = giaoDich;
     }
@@ -33,5 +32,9 @@ public class MaChungKhoan {
 
     public GiaoDich getGiaoDich() {
         return giaoDich;
+    }
+
+    public void setTenCongTi(String tenCongTi) {
+        this.tenCongTi = tenCongTi;
     }
 }
