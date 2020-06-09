@@ -25,6 +25,12 @@ public class LayDuLieuVeCongTi {
                     String tenCongTi = splitData[2];
                     String tenNhomNganh = splitData[3];
                     ThongTin.maChungKhoanHashMap.get(tenMa).setTenCongTi(tenCongTi);
+                    if(ThongTin.nhomNganhHashMap.containsKey(tenNhomNganh)){
+                        ThongTin.nhomNganhHashMap.get(tenNhomNganh).addMa(tenMa);
+                    }
+                    else{
+                        ThongTin.nhomNganhHashMap.put(tenNhomNganh, new NhomNganh(tenMa, tenNhomNganh));
+                    }
                 } else break;
             }
 
