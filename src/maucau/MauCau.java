@@ -10,8 +10,7 @@ public abstract class MauCau {
         Random rd = new Random();
         return tapCau.get(rd.nextInt(tapCau.size()));
     }
-    public static void a(){}
-    public void thuThapCau(){}
+    public abstract void thuThapCau();
 
     public ArrayList<String> getTapCau() {
         return tapCau;
