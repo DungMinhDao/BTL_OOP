@@ -65,7 +65,7 @@ public class Mau6 extends MauCau {
         for(i = 0; i < length; i++){
             if(nhomTangGia.get(i).getGia().getTran() == nhomTangGia.get(i).getGia().getDongCua()){
                 count++;
-                if(count < 10){
+                if(count < 6){
                     s1 = s1 + " " + nhomTangGia.get(i).getTenMa() + ",";
                 }
             }
