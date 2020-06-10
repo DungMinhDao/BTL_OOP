@@ -35,10 +35,11 @@ public class TinhChatMa {
         }
         return false;
     }
-    public boolean dungGia(){
-        if(ma.getGia().getThayDoiDiem() == 0) {
+    public boolean dungGiaThamChieu(){
+        if(ma.getGia().getDongCua() == ma.getGia().getThamChieu()) {
             return true;
         }
         return false;
     }
+
 }
