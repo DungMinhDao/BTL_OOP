@@ -1,6 +1,7 @@
 package maucau;
 
 import thongtin.MaChungKhoan;
+import thongtin.ThongTin;
 
 import java.util.ArrayList;
 
@@ -51,13 +52,30 @@ public class Mau4 extends MauCau  {
     }
 
     public void cau2(){
-        if(nhomBlueChipsTang.size() < 5){
-            return;
+        String s = "";
+        if(nhomBlueChipsTang.size() > nhomBlueChipsGiam.size()
+                && nhomBlueChipsTang.size() > nhomBlueChipsDungGia.size()){
+            s = "Hàng loạt bluechips đều tăng điểm mạnh như ";
+            for(int i = 1; i < nhomBlueChipsTang.size(); ++i){
+                if (i == 4){
+                    break;
+                }
+                s += nhomBlueChipsTang.get(i).getTenMa() + " tang "
+                        + nhomBlueChipsTang.get(i).getGia().getThayDoiDiem() * 1000 + " đồng, ";
+            }
+            s += "...";
         }
-        String s = "Hàng loạt bluechips đều tăng điểm mạnh như ";
-        for(int i = 0; i < nhomBlueChipsTang.size(); ++i){
-            s += nhomBlueChipsTang.get(i).getTenMa() + " tăng "
-                    + nhomBlueChipsTang.get(i).getGia().getThayDoiDiem() * 1000 + " đồng, ";
+        else if(nhomBlueChipsGiam.size() > nhomBlueChipsTang.size()
+                && nhomBlueChipsGiam.size() > nhomBlueChipsDungGia.size()){
+            s = "Hàng loạt bluechips đều tăng điểm mạnh như ";
+            for(int i = 1; i < nhomBlueChipsGiam.size(); ++i){
+                if (i == 4){
+                    break;
+                }
+                s += nhomBlueChipsGiam.get(i).getTenMa() + " tang "
+                        + nhomBlueChipsGiam.get(i).getGia().getThayDoiDiem() * 1000 + " đồng, ";
+            }
+            s += "...";
         }
         tapCau.add(s);
     }

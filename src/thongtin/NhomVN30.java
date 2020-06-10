@@ -1,7 +1,6 @@
 package thongtin;
 
 import java.util.ArrayList;
-
 public class NhomVN30 {
     public static ArrayList<String> tenMA;
     private int soMaGiam = 0;
@@ -11,7 +10,17 @@ public class NhomVN30 {
 
     public NhomVN30(){
         for(int i = 0; i < tenMA.size(); ++i){
-
+            MaChungKhoan ma = ThongTin.maChungKhoanHashMap.get(tenMA.get(i));
+            if(ma.getGia().getThayDoiDiem() < 0) {
+                soMaGiam += 1;
+            }
+            else if(ma.getGia().getThayDoiDiem() > 0){
+                soMaTang += 1;
+            }
+            else {
+                soMaThamChieu += 1;
+            }
+            tongDiemThayDoi += ma.getGia().getThayDoiDiem();
         }
     }
 

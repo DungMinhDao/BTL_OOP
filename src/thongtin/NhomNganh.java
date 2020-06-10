@@ -17,7 +17,7 @@ public class NhomNganh {
         tenMa.add(ma);
         tongThayDoi += ThongTin.maChungKhoanHashMap.get(ma).getGia().getThayDoiDiem();
     }
-    
+
     public ArrayList<String> getTenMa() {
         return tenMa;
     }

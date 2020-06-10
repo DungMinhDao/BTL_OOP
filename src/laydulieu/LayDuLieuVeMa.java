@@ -41,8 +41,8 @@ public class LayDuLieuVeMa {
                     long vonHoaThiTruong = Long.parseLong(splitData[15]);
 
                     MaChungKhoan maChungKhoan = new MaChungKhoan( tenMa,new Gia(thamChieu, moCua, dongCua, caoNhat, thapNhat, thayDoiGia, tiLeThayDoiGia)
-                                    , new GiaoDich(khoiLuongKhopLenh, khoiLuongThoaThuan, giaTriKhopLenh, giaTriThoaThuan)
-                                    , date,vonHoaThiTruong);
+                            , new GiaoDich(khoiLuongKhopLenh, khoiLuongThoaThuan, giaTriKhopLenh, giaTriThoaThuan)
+                            , date,vonHoaThiTruong);
                     ThongTin.maChungKhoanHashMap.put(tenMa,maChungKhoan);
                 } else break;
             }

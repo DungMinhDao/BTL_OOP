@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Mau3 extends MauCau {
     private static String tag = "Nhóm ngân hàng";
-    private ArrayList<MaChungKhoan> nhomNganHangTang, nhomNganHangGiam;
+    private ArrayList<MaChungKhoan> nhomNganHangTang, nhomNganHangGiam, nhomNganHangDungGia;
 
     public Mau3(ArrayList<MaChungKhoan> nhomNganHangTang, ArrayList<MaChungKhoan> nhomNganHangGiam){
         this.nhomNganHangTang = nhomNganHangTang;
@@ -14,7 +14,7 @@ public class Mau3 extends MauCau {
     }
 
     public void cau1(){
-        String s = "Nhóm ngân hàng suy yếu với"
+        String s = "Nhóm ngân hàng suy yếu với";
     }
 
     public String getTag() {

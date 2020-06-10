@@ -12,7 +12,7 @@ import java.util.HashMap;
 
 public class LayDuLieuVeCongTi {
     private static final String COMMA = ","; // Split by comma
-    public static void layMaCongTi(File fn){
+    public static void layThongTinCongTi(File fn){
         BufferedReader br = null;
         try {
             String line;
@@ -24,12 +24,13 @@ public class LayDuLieuVeCongTi {
                     String tenMa = splitData[1];
                     String tenCongTi = splitData[2];
                     String tenNhomNganh = splitData[3];
-                    ThongTin.maChungKhoanHashMap.get(tenMa).setTenCongTi(tenCongTi);
-                    if(ThongTin.nhomNganhHashMap.containsKey(tenNhomNganh)){
-                        ThongTin.nhomNganhHashMap.get(tenNhomNganh).addMa(tenMa);
-                    }
-                    else{
-                        ThongTin.nhomNganhHashMap.put(tenNhomNganh, new NhomNganh(tenMa, tenNhomNganh));
+                    if(ThongTin.maChungKhoanHashMap.containsKey(tenMa)) {
+                        ThongTin.maChungKhoanHashMap.get(tenMa).setTenCongTi(tenCongTi);
+                        if (ThongTin.nhomNganhHashMap.containsKey(tenNhomNganh)) {
+                            ThongTin.nhomNganhHashMap.get(tenNhomNganh).addMa(tenMa);
+                        } else {
+                            ThongTin.nhomNganhHashMap.put(tenNhomNganh, new NhomNganh(tenMa, tenNhomNganh));
+                        }
                     }
                 } else break;
             }

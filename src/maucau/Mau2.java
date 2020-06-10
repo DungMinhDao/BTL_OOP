@@ -6,25 +6,32 @@ import java.util.ArrayList;
 
 public class Mau2 extends MauCau {
     private static String tag = "Một số mã";
-    ArrayList<MaChungKhoan> maChungKhoans;
+    ArrayList<MaChungKhoan> maChungKhoanTang, maChungKhoanGiam, maChungKhoanThamChieu;
 
-    public Mau2(ArrayList<MaChungKhoan> maChungKhoans){
-        this.maChungKhoans = maChungKhoans;
+    public Mau2(ArrayList<MaChungKhoan> maChungKhoanTang, ArrayList<MaChungKhoan> maChungKhoanGiam,
+                ArrayList<MaChungKhoan> maChungKhoanThamChieu) {
+        this.maChungKhoanTang = maChungKhoanTang;
+        this.maChungKhoanGiam = maChungKhoanGiam;
+        this.maChungKhoanThamChieu = maChungKhoanThamChieu;
     }
 
-    public void cau1(){
-        
+    public void mau1(){
+
     }
 
-    public String getTag() {
+    public static String getTag() {
         return tag;
     }
 
-    public ArrayList<MaChungKhoan> getMaChungKhoans() {
-        return maChungKhoans;
+    public ArrayList<MaChungKhoan> getMaChungKhoanTang() {
+        return maChungKhoanTang;
     }
 
-    public ArrayList<String> getTapCau(){
-        return tapCau;
+    public ArrayList<MaChungKhoan> getMaChungKhoanGiam() {
+        return maChungKhoanGiam;
+    }
+
+    public ArrayList<MaChungKhoan> getMaChungKhoanThamChieu() {
+        return maChungKhoanThamChieu;
     }
 }

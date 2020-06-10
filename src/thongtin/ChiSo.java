@@ -6,12 +6,12 @@ public class ChiSo {
     private String tenChiSo;
     private Gia gia;
     private GiaoDich giaoDich;
-    private Date thoiGian;
+    private Date thoi_gian;
 
-    public ChiSo(Gia gia, GiaoDich giaoDich, Date thoiGian, String tenChiSo) {
+    public ChiSo(Gia gia, GiaoDich giaoDich, Date thoi_gian, String tenChiSo) {
         this.gia = gia;
         this.giaoDich = giaoDich;
-        this.thoiGian = thoiGian;
+        this.thoi_gian = thoi_gian;
         this.tenChiSo = tenChiSo;
     }
 
@@ -36,11 +36,10 @@ public class ChiSo {
     }
 
     public Date getThoi_gian() {
-        return thoiGian;
+        return thoi_gian;
     }
 
     public void setThoi_gian(Date thoi_gian) {
-        this.thoiGian = thoi_gian;
+        this.thoi_gian = thoi_gian;
     }
 }
-

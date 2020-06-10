@@ -10,7 +10,7 @@ public class Mau7 extends MauCau {
     private static String tag = "Nhóm giảm giá";
     private ArrayList<MaChungKhoan> nhomGiamGia;
 
-    public Mau6(final ArrayList<MaChungKhoan> nhomGiamGia){
+    public Mau7(final ArrayList<MaChungKhoan> nhomGiamGia){
         this.nhomGiamGia = nhomGiamGia;
         Collections.sort(this.nhomGiamGia, new Comparator<MaChungKhoan>() {
             @Override
@@ -24,29 +24,29 @@ public class Mau7 extends MauCau {
 
     @Override
     public void thuThapCau(){
-        Cau1();
-        Cau2();
-        Cau3();
+        cau1();
+        cau2();
+        cau3();
     }
 
-    public void Cau1(){
+    public void cau1(){
         String s = "Phía giảm giá, dẫn đầu là ";
         s = s + nhomGiamGia.get(0).getTenMa() + " của " + nhomGiamGia.get(0).getTenCongTi() + ", giảm " + nhomGiamGia.get(0).getGia().getTiLeThayDoi() + " xuống " + nhomGiamGia.get(0).getGia().getDongCua();
         tapCau.add(s);
     }
 
-    public void Cau2(){
-        String s = " Nhóm giảm giá cũng có sự góp mặt của một số mã đáng chú khác như ";
+    public void cau2(){
+        String s = "Nhóm giảm giá cũng có sự góp mặt của một số mã đáng chú khác như ";
         int length = nhomGiamGia.size(), i;
         length = Math.min(length, 5);
         for(i = 1; i < length; i++){
-            s = s + ", " + nhomGiamGia.get(i).getTenMa();
+            s = s + nhomGiamGia.get(i).getTenMa() + ", ";
         }
-        s = s + ",...";
+        s = s + "...";
         tapCau.add(s);
     }
 
-    public void Cau3(){
+    public void cau3(){
         String s = "Phía giảm giá, mã có lượng giảm thấp nhất là ";
         int length = nhomGiamGia.size();
         s = s + nhomGiamGia.get(length-1).getTenMa() + " của " + nhomGiamGia.get(length-1).getTenCongTi() + ", giảm " + nhomGiamGia.get(length-1).getGia().getTiLeThayDoi() + " xuống " + nhomGiamGia.get(length-1).getGia().getDongCua();
@@ -55,8 +55,8 @@ public class Mau7 extends MauCau {
     public static String getTag() {
         return tag;
     }
-    
+
     public ArrayList<MaChungKhoan> getNhomGiamGia() {
         return nhomGiamGia;
-    }    
+    }
 }

@@ -26,6 +26,10 @@ public class Mau1 extends MauCau {
         String s = "Thị trường đóng cửa với " + soMaTang + " mã tăng giá trong đó có "
                 + soMaTangTran + " mã tăng trần; " + soMaDungGia + " mã đứng giá, "
                 + soMaGiam + " mã giảm giá trong đó có " + soMaGiamSan + " mã giảm sàn.";
+        // String s = String.format("Thị trường đóng cửa với %d mã tăng giá trong đó có %d mã tăng trần,
+        // %d mã đứng giá, %d mã giảm giá trong đó có %d mã giảm sàn.", soMaTang, soMaTangTran, soMaDungGia,
+        // soMaGiam, soMaGiamSan)
+
         tapCau.add(s);
     }
 
