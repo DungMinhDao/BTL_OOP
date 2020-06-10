@@ -24,10 +24,10 @@ public class Mau2 extends MauCau {
     public void cau1(){
         int i;
         String s, s1;
-		float minTang = maChungKhoanTang.get(0).getGia().getThayDoiDiem();
+	float minTang = maChungKhoanTang.get(0).getGia().getThayDoiDiem();
         float maxTang = minTang;
         s = s + maChungKhoanTang.get(0).getTenMa();
-        final int length = maChungKhoanTang.size();
+        int length = Math.min(maChungKhoanTang.size(), 5);
         for(i = 1; i < length; i++){
             if(maChungKhoanTang.get(i).getGia().getThayDoiDiem() > maxTang){
                 maxTang = maChungKhoanTang.get(i).getGia().getThayDoiDiem();
@@ -52,6 +52,7 @@ public class Mau2 extends MauCau {
         String s = "Các mã ";
         int i;
         s = s + maChungKhoanThamChieu.get(0).getTenMa();
+	int length = Math.min(maChungKhoanTang.size(), 5);
         for(i = 1; i < maChungKhoanThamChieu.size(); i++){
             s = s + ", " + maChungKhoanThamChieu.get(i).getTenMa(); 
         }
@@ -63,10 +64,10 @@ public class Mau2 extends MauCau {
     public void cau3(){
         int i;
         String s, s1;
-		float minTang = maChungKhoanTang.get(0).getGia().getThayDoiDiem();
+	float minTang = maChungKhoanTang.get(0).getGia().getThayDoiDiem();
         float maxTang = minTang;
         s = s + maChungKhoanTang.get(0).getTenMa();
-        int length = maChungKhoanTang.size();
+        int length = Math.min(maChungKhoanTang.size(), 5);
         for(i = 1; i < length; i++){
             if(maChungKhoanTang.get(i).getGia().getThayDoiDiem() > maxTang){
                 maxTang = maChungKhoanTang.get(i).getGia().getThayDoiDiem();
