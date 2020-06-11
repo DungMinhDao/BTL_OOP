@@ -27,16 +27,16 @@ public class Mau3 extends MauCau {
         float maxGiam = minGiam;
         s = s + nhomNganHangGiam.get(0).getTenMa();
         for(i = 1; i < length; i++){
-            if(minGiam > nhomNganHangGiam.get(i).getGia().getThayDoiDiem()){
+            if(minGiam < nhomNganHangGiam.get(i).getGia().getThayDoiDiem()){
                 minGiam = nhomNganHangGiam.get(i).getGia().getThayDoiDiem();
             }
-            if(maxGiam < nhomNganHangGiam.get(i).getGia().getThayDoiDiem()){
+            if(maxGiam > nhomNganHangGiam.get(i).getGia().getThayDoiDiem()){
                 maxGiam = nhomNganHangGiam.get(i).getGia().getThayDoiDiem();
             }
             s = s + ", " + nhomNganHangGiam.get(i).getTenMa();
         }
 
-        s = s + "trượt giá " + minGiam + "-" + maxGiam + " đồng.";
+        s = s + "trượt giá " + (-minGiam) + "-" + (-maxGiam) + " đồng.";
         tapCau.add(s);
     }
 
