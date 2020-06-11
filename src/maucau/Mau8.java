@@ -51,7 +51,7 @@ public class Mau8 extends MauCau{
 
     public void cau2(){
         String s = "Nhóm ngành giảm mạnh nhất là nhóm ngành ";
-        s = s + nhomNganhGiam.get(0).getTenNhomNganh() + " với mức giảm " + nhomNganhGiam.get(0).getTongThayDoi() + " điểm.";
+        s = s + nhomNganhGiam.get(0).getTenNhomNganh() + " với mức giảm " + (-nhomNganhGiam.get(0).getTongThayDoi()) + " điểm.";
         
         tapCau.add(s);
     }
