@@ -1,12 +1,12 @@
 package maucau;
 import java.util.*;
-import thongtin.MaChungKhoan;
+
 import thongtin.NhomNganh;
 
 public class Mau8 extends MauCau{
     private static String tag = "Tổng quan về các nhóm ngành";
     private ArrayList<NhomNganh> nhomNganhGiam, nhomNganhTang;
-
+    
     public Mau8(ArrayList<NhomNganh> nhomNganhGiam, ArrayList<NhomNganh> nhomNganhTang){
         this.nhomNganhGiam = nhomNganhGiam;
         this.nhomNganhTang = nhomNganhTang;
@@ -35,33 +35,31 @@ public class Mau8 extends MauCau{
         cau2();
         cau3();
         cau4();
-        cau5();
     }
 
     public void cau1(){
-        String s = "";
+        String s = new String();
         if(nhomNganhGiam.size() >= nhomNganhTang.size()*3){
             s = "Hầu hết các nhóm ngành trên thị trường đều giảm điểm.";
         }
         else if(nhomNganhTang.size() >= nhomNganhGiam.size()*3){
             s = "Hầu hết các nhóm ngành trên thị trường đều tăng điểm.";
         }
-        if(!s.isEmpty()) {
-            tapCau.add(s);
-        }
+
+        tapCau.add(s);
     }
 
     public void cau2(){
         String s = "Nhóm ngành giảm mạnh nhất là nhóm ngành ";
-        s = s + nhomNganhGiam.get(0).getTenNhomNganh() + " với mức giảm " + (- nhomNganhGiam.get(0).getTongThayDoi()) + " điểm.";
-
+        s = s + nhomNganhGiam.get(0).getTenNhomNganh() + " với mức giảm " + (-nhomNganhGiam.get(0).getTongThayDoi()) + " điểm.";
+        
         tapCau.add(s);
     }
 
     public void cau3(){
         String s = "Nhóm ngành tăng mạnh nhất là nhóm ngành ";
         s = s + nhomNganhTang.get(0).getTenNhomNganh() + " với mức tăng " + nhomNganhTang.get(0).getTongThayDoi() + " điểm.";
-
+        
         tapCau.add(s);
     }
 
@@ -76,28 +74,7 @@ public class Mau8 extends MauCau{
         tapCau.add(s);
     }
 
-    public void cau5(){
-        if(nhomNganhTang.size() > nhomNganhGiam.size()){
-            String s = "Đà tăng cũng lan tỏa sang một số ngành khác như ";
-            for(int i = 0; i <= nhomNganhTang.size(); ++i){
-                if(i == 4){
-                    break;
-                }
-                s += nhomNganhTang.get(i).getTenNhomNganh() + ", ";
-            }
-            s += "...";
-            tapCau.add(s);
-        }
-        if(nhomNganhGiam.size() > nhomNganhTang.size()){
-            String s = "Đà suy giảm cũng lan sang một số ngành khác như ";
-            for(int i = 0; i <= nhomNganhGiam.size(); ++i){
-                if(i == 4){
-                    break;
-                }
-                s += nhomNganhGiam.get(i).getTenNhomNganh() + ", ";
-            }
-            s += "...";
-            tapCau.add(s);
-        }
+    public String getTag(){
+        return Mau8.tag;
     }
 }
