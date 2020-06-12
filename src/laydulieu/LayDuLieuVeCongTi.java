@@ -24,7 +24,7 @@ public class LayDuLieuVeCongTi {
                     String tenMa = splitData[1];
                     String tenCongTi = splitData[2];
                     String tenNhomNganh = splitData[3];
-                    int key = splitData[4];
+                    int key = Integer.parseInt(splitData[4]);
                     if(ThongTin.maChungKhoanHashMap.containsKey(tenMa)) {
                         ThongTin.maChungKhoanHashMap.get(tenMa).setTenCongTi(tenCongTi);
                         if (ThongTin.nhomNganhHashMap.containsKey(tenNhomNganh)) {
