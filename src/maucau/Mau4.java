@@ -31,6 +31,8 @@ public class Mau4 extends MauCau  {
             }
             s += nhomBlueChipsTang.get(i).getTenMa() + " tăng "
                     + nhomBlueChipsTang.get(i).getGia().getThayDoiDiem() * 1000 + " đồng, ";
+            s += "đứng giá";
+            tapCau.add(s);
         }
 
         for(int i = 0; i < nhomBlueChipsGiam.size(); ++i){
@@ -39,6 +41,8 @@ public class Mau4 extends MauCau  {
             }
             s += nhomBlueChipsGiam.get(i).getTenMa() + " giảm "
                     + (- nhomBlueChipsGiam.get(i).getGia().getThayDoiDiem() * 1000) + " đồng, ";
+            s += "đứng giá";
+            tapCau.add(s);
         }
 
         for(int i = 0; i < nhomBlueChipsDungGia.size(); ++i){
@@ -46,9 +50,9 @@ public class Mau4 extends MauCau  {
                 break;
             }
             s += nhomBlueChipsDungGia.get(i) + ", ";
+            s += "đứng giá";
+            tapCau.add(s);
         }
-        s += "đứng giá";
-        tapCau.add(s);
     }
 
     public void cau2(){

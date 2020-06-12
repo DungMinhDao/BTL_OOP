@@ -6,7 +6,7 @@ import thongtin.NhomNganh;
 public class Mau8 extends MauCau{
     private static String tag = "Tổng quan về các nhóm ngành";
     private ArrayList<NhomNganh> nhomNganhGiam, nhomNganhTang;
-    
+
     public Mau8(ArrayList<NhomNganh> nhomNganhGiam, ArrayList<NhomNganh> nhomNganhTang){
         this.nhomNganhGiam = nhomNganhGiam;
         this.nhomNganhTang = nhomNganhTang;
@@ -52,14 +52,14 @@ public class Mau8 extends MauCau{
     public void cau2(){
         String s = "Nhóm ngành giảm mạnh nhất là nhóm ngành ";
         s = s + nhomNganhGiam.get(0).getTenNhomNganh() + " với mức giảm " + (-nhomNganhGiam.get(0).getTongThayDoi()) + " điểm.";
-        
+
         tapCau.add(s);
     }
 
     public void cau3(){
         String s = "Nhóm ngành tăng mạnh nhất là nhóm ngành ";
         s = s + nhomNganhTang.get(0).getTenNhomNganh() + " với mức tăng " + nhomNganhTang.get(0).getTongThayDoi() + " điểm.";
-        
+
         tapCau.add(s);
     }
 

@@ -16,7 +16,6 @@ public class ThongTinMau7 extends ThongTinMau{
             if (tinhChatMa.giamGia()) {
                 nhomGiamGia.add(ma);
             }
-
         }
         return new Mau7(nhomGiamGia);
     }

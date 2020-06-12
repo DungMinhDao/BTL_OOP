@@ -15,8 +15,8 @@ public class Mau7 extends MauCau {
         Collections.sort(this.nhomGiamGia, new Comparator<MaChungKhoan>() {
             @Override
             public int compare(final MaChungKhoan m1, final MaChungKhoan m2){
-                if(m1.getGia().getTiLeThayDoi() < m2.getGia().getTiLeThayDoi()) return -1;
-                else if(m1.getGia().getTiLeThayDoi() > m2.getGia().getTiLeThayDoi()) return 1;
+                if(m1.getGia().getTiLeThayDoi() < m2.getGia().getTiLeThayDoi()) return 1;
+                else if(m1.getGia().getTiLeThayDoi() > m2.getGia().getTiLeThayDoi()) return -1;
                 else return 0;
             }
         });
@@ -31,7 +31,7 @@ public class Mau7 extends MauCau {
 
     public void cau1(){
         String s = "Phía giảm giá, dẫn đầu là ";
-        s = s + nhomGiamGia.get(0).getTenMa() + " của " + nhomGiamGia.get(0).getTenCongTi() + ", giảm " + nhomGiamGia.get(0).getGia().getTiLeThayDoi() + "% xuống " + nhomGiamGia.get(0).getGia().getDongCua();
+        s = s + nhomGiamGia.get(0).getTenMa() + " của " + nhomGiamGia.get(0).getTenCongTi() + ", giảm " + nhomGiamGia.get(0).getGia().getTiLeThayDoi() + " xuống " + nhomGiamGia.get(0).getGia().getDongCua();
         tapCau.add(s);
     }
 
@@ -49,7 +49,7 @@ public class Mau7 extends MauCau {
     public void cau3(){
         String s = "Phía giảm giá, mã có lượng giảm thấp nhất là ";
         int length = nhomGiamGia.size();
-        s = s + nhomGiamGia.get(length-1).getTenMa() + " của " + nhomGiamGia.get(length-1).getTenCongTi() + ", giảm " + nhomGiamGia.get(length-1).getGia().getTiLeThayDoi() + "% xuống " + nhomGiamGia.get(length-1).getGia().getDongCua();
+        s = s + nhomGiamGia.get(length-1).getTenMa() + " của " + nhomGiamGia.get(length-1).getTenCongTi() + ", giảm " + nhomGiamGia.get(length-1).getGia().getTiLeThayDoi() + " xuống " + nhomGiamGia.get(length-1).getGia().getDongCua();
         tapCau.add(s);
     }
     public static String getTag() {

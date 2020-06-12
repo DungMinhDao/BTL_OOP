@@ -2,7 +2,7 @@ package thongtin;
 
 import java.util.ArrayList;
 public class NhomVN30 {
-    public static ArrayList<String> tenMA;
+    public static ArrayList<String> tenMA = new ArrayList<String>();
     private int soMaGiam = 0;
     private int soMaTang = 0;
     private int soMaThamChieu = 0;

@@ -52,16 +52,18 @@ public class Mau5 extends MauCau {
         if(VN30.getSoMaThamChieu() > VN30.getSoMaGiam() && VN30.getSoMaThamChieu() > VN30.getSoMaTang()){
             s = "Rổ VN30 đóng cửa chỉ có " + VN30.getSoMaTang() + " mã tăng và " + VN30.getSoMaGiam()
                     + " mã giảm, còn lại là tham chiếu.";
+            tapCau.add(s);
         }
         else if(VN30.getSoMaTang() > VN30.getSoMaGiam() && VN30.getSoMaTang() > VN30.getSoMaThamChieu()){
             s = "Rổ VN30 đóng cửa chỉ có " + VN30.getSoMaGiam() + " mã giảm và " + VN30.getSoMaThamChieu()
                     + " mã tham chiếu, còn lại là tăng.";
+            tapCau.add(s);
         }
         else if(VN30.getSoMaGiam() > VN30.getSoMaThamChieu() &&VN30.getSoMaGiam() >  VN30.getSoMaTang()){
             s = "Rổ VN30 đóng cửa chỉ có " + VN30.getSoMaTang() + " mã giảm và " + VN30.getSoMaThamChieu()
                     + " mã tham chiếu, còn lại là giảm";
+            tapCau.add(s);
         }
-        tapCau.add(s);
     }
 
     public void cau3(){
@@ -69,23 +71,26 @@ public class Mau5 extends MauCau {
         if(VN30.getSoMaTang() > 15){
             s = "Các cổ phiếu trong nhóm VN30 ghi nhận sự tăng giá trên diện rộng với " + VN30.getSoMaTang()
                     + " mã tăng giá.";
+            tapCau.add(s);
         }
         else if(VN30.getSoMaGiam() > 15){
             s = "Các cổ phiếu trong nhóm VN30 ghi nhận sự giảm giá trên diện rộng với " + VN30.getSoMaGiam()
                     + " mã giảm giá.";
+            tapCau.add(s);
         }
-        tapCau.add(s);
     }
 
     public void cau4(){
         String s = "";
         if(VN30.getSoMaGiam() > VN30.getSoMaTang()){
             s = "Số mã giảm giá trong VN30 có phần vượt trội hơn số mã xanh.";
+            tapCau.add(s);
         }
         else if(VN30.getSoMaTang() > VN30.getSoMaGiam()){
             s = "Số mã xanh trong VN30 có phần vượt trội hơn số mã giảm giá.";
+            tapCau.add(s);
         }
-        tapCau.add(s);
+
     }
 
     public String getTag() {

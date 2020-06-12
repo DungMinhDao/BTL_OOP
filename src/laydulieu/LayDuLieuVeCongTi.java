@@ -2,7 +2,7 @@ package laydulieu;
 
 import thongtin.NhomNganh;
 import thongtin.ThongTin;
-import thongtin.NhomVN30;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -24,7 +24,6 @@ public class LayDuLieuVeCongTi {
                     String tenMa = splitData[1];
                     String tenCongTi = splitData[2];
                     String tenNhomNganh = splitData[3];
-                    int key = Integer.parseInt(splitData[4]);
                     if(ThongTin.maChungKhoanHashMap.containsKey(tenMa)) {
                         ThongTin.maChungKhoanHashMap.get(tenMa).setTenCongTi(tenCongTi);
                         if (ThongTin.nhomNganhHashMap.containsKey(tenNhomNganh)) {
@@ -32,9 +31,6 @@ public class LayDuLieuVeCongTi {
                         } else {
                             ThongTin.nhomNganhHashMap.put(tenNhomNganh, new NhomNganh(tenMa, tenNhomNganh));
                         }
-                    }
-                    if(key == 1){
-                        NhomVN30.tenMA.add(tenMa);
                     }
                 } else break;
             }

@@ -18,5 +18,5 @@ public class ThongTinMau8 extends ThongTinMau{
             }
         }
         return new Mau8(nhomNganhGiam, nhomNganhTang);
-    }    
+    }
 }

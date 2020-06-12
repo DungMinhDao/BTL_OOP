@@ -18,7 +18,7 @@ public class ThongTinMau1 extends ThongTinMau {
             if(tinhChatMa.giamGia()) {
                 soMaGiam ++;
             }
-            if(tinhChatMa.dungGia()) {
+            if(tinhChatMa.dungGiaThamChieu()) {
                 soMaDungGia ++;
             }
             if(tinhChatMa.tangTran()) {

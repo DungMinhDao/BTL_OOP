@@ -17,27 +17,28 @@ public class Mau3 extends MauCau {
     public void thuThapCau(){
         cau1();
         cau2();
-        cau3();
     }
 
-    public void cau1(){
+    public void cau1() {
         String s = "Nhóm ngân hàng suy yếu với ";
-        int i, length = nhomNganHangGiam.size();
-        float minGiam = nhomNganHangGiam.get(0).getGia().getThayDoiDiem();
-        float maxGiam = minGiam;
-        s = s + nhomNganHangGiam.get(0).getTenMa();
-        for(i = 1; i < length; i++){
-            if(minGiam > nhomNganHangGiam.get(i).getGia().getThayDoiDiem()){
-                minGiam = nhomNganHangGiam.get(i).getGia().getThayDoiDiem()
+        int i, length = Math.min(nhomNganHangGiam.size(), 6);
+        if(length != 1){
+            float minGiam = nhomNganHangGiam.get(0).getGia().getThayDoiDiem();
+            float maxGiam = minGiam;
+            s = s + nhomNganHangGiam.get(0).getTenMa();
+            for (i = 1; i < length; i++) {
+                if (minGiam > nhomNganHangGiam.get(i).getGia().getThayDoiDiem()) {
+                    minGiam = nhomNganHangGiam.get(i).getGia().getThayDoiDiem();
+                }
+                if (maxGiam < nhomNganHangGiam.get(i).getGia().getThayDoiDiem()) {
+                    maxGiam = nhomNganHangGiam.get(i).getGia().getThayDoiDiem();
+                }
+                s = s + ", " + nhomNganHangGiam.get(i).getTenMa();
             }
-            if(maxGiam < nhomNganHangGiam.get(i).getGia().getThayDoiDiem()){
-                maxGiam = nhomNganHangGiam.get(i).getGia().getThayDoiDiem()
-            }
-            s = s + ", " + nhomNganHangGiam.get(i).getTenMa();
-        }
 
-        s = s + "trượt giá " + minGiam + "-" + maxGiam + " đồng.";
-        tapCau.add(s);
+            s = s + " trượt giá " + (-minGiam) + "-" + (-maxGiam) + " đồng.";
+            tapCau.add(s);
+        }
     }
 
     public void cau2(){
@@ -48,22 +49,17 @@ public class Mau3 extends MauCau {
         s = s + nhomNganHangTang.get(0).getTenMa();
         for(i = 1; i < length; i++){
             if(minTang > nhomNganHangTang.get(i).getGia().getThayDoiDiem()){
-                minTang = nhomNganHangTang.get(i).getGia().getThayDoiDiem()
+                minTang = nhomNganHangTang.get(i).getGia().getThayDoiDiem();
             }
             if(maxTang < nhomNganHangTang.get(i).getGia().getThayDoiDiem()){
-                maxTang = nhomNganHangTang.get(i).getGia().getThayDoiDiem()
+                maxTang = nhomNganHangTang.get(i).getGia().getThayDoiDiem();
             }
             s = s + ", " + nhomNganHangTang.get(i).getTenMa();
         }
-        s = s + " xanh giá, tăng" + minTang + "-" + maxTang + "đồng.";
+        s = s + " xanh giá, tăng " + minTang + "-" + maxTang + "đồng.";
         tapCau.add(s);
     }
 
-    public void cau3(){
-        String s = "";
-
-        tapCau.add(s);
-    }
 
     public String getTag() {
         return tag;
