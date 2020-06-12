@@ -23,11 +23,13 @@ public class Mau2 extends MauCau {
 
     public void cau1(){
         int i;
-        String s, s1;
+        String s = new String();
+        String s1 = new String();
 	float minTang = maChungKhoanTang.get(0).getGia().getThayDoiDiem();
         float maxTang = minTang;
+	int count1 = 0, count2 = 0; 
         s = s + maChungKhoanTang.get(0).getTenMa();
-        int length = Math.min(maChungKhoanTang.size(), 5);
+        final int length = maChungKhoanTang.size();
         for(i = 1; i < length; i++){
             if(maChungKhoanTang.get(i).getGia().getThayDoiDiem() > maxTang){
                 maxTang = maChungKhoanTang.get(i).getGia().getThayDoiDiem();
@@ -37,10 +39,16 @@ public class Mau2 extends MauCau {
             }
 
             if(maChungKhoanTang.get(i).getGia().getDongCua() == maChungKhoanTang.get(i).getGia().getTran()){
-                s1 = s1 + ", " + maChungKhoanTang.get(i).getTenMa();
+		if(count2 < 5){
+			s1 = s1 + ", " + maChungKhoanTang.get(i).getTenMa();
+			count2++;
+		}
             }
             else{
-                s = s + ", " + maChungKhoanTang.get(i).getTenMa();
+		    if(count1 < 5){
+			    s = s + ", " + maChungKhoanTang.get(i).getTenMa();
+			    count1++;
+		    }
             }
         }
 
@@ -49,10 +57,9 @@ public class Mau2 extends MauCau {
     }
 
     public void cau2(){
-        String s = "Các mã ";
+        String s = new String("Các mã ");
         int i;
         s = s + maChungKhoanThamChieu.get(0).getTenMa();
-	int length = Math.min(maChungKhoanTang.size(), 5);
         for(i = 1; i < maChungKhoanThamChieu.size(); i++){
             s = s + ", " + maChungKhoanThamChieu.get(i).getTenMa(); 
         }
@@ -63,11 +70,11 @@ public class Mau2 extends MauCau {
 
     public void cau3(){
         int i;
-        String s, s1;
-	float minTang = maChungKhoanTang.get(0).getGia().getThayDoiDiem();
+        String s = new String();
+		float minTang = maChungKhoanTang.get(0).getGia().getThayDoiDiem();
         float maxTang = minTang;
         s = s + maChungKhoanTang.get(0).getTenMa();
-        int length = Math.min(maChungKhoanTang.size(), 5);
+        int length = Math.min(maChungKhoanTang.size(), 6);
         for(i = 1; i < length; i++){
             if(maChungKhoanTang.get(i).getGia().getThayDoiDiem() > maxTang){
                 maxTang = maChungKhoanTang.get(i).getGia().getThayDoiDiem();
@@ -80,7 +87,7 @@ public class Mau2 extends MauCau {
         }
 
         s = s +  "lần lượt tăng " + minTang + "-" + maxTang + "đồng một cổ phiếu trong khi ";
-        length = maChungKhoanThamChieu.size();
+        length = Math.min(maChungKhoanThamChieu.size(), 6);
         for(i = 0; i < length; i++){
             s = s + ", " + maChungKhoanThamChieu.get(i).getTenMa();
         }
