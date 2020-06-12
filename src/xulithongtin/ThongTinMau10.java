@@ -9,7 +9,7 @@ import thongtin.ThongTin;
 public class ThongTinMau10 extends ThongTinMau{
 
     private static String[] danhSachThoaiVon = {"BMI", "FPT", "SMA", "BVH", "PPC", "TRA", "DMC", "BMP"};
-    private static float mucDanhGia = 3;
+    private static float mucDanhGia = 1;
 
     @Override
     public MauCau khoiTaoMau(){
