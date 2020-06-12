@@ -5,41 +5,91 @@ import thongtin.ThongTin;
 
 public class TinhChatMa {
     private MaChungKhoan ma;
+    private boolean tangTran, tang, dungGiaThamChieu, giam, giamSan;
 
     public TinhChatMa(MaChungKhoan ma) {
         this.ma = ma;
+
+        if (ma.getGia().getTran() == ma.getGia().getSan()){
+            if (ma.getGia().getThamChieu() < ma.getGia().getTran()){
+                this.tangTran = true;
+                this.tang = true;
+                this.dungGiaThamChieu = false;
+                this.giam = false;
+                this.giamSan = false;
+            }
+            else if (ma.getGia().getThamChieu() > ma.getGia().getTran()){
+                this.tangTran = false;
+                this.tang = false;
+                this.dungGiaThamChieu = false;
+                this.giam = true;
+                this.giamSan = true;
+            }
+            else {
+                this.tangTran = false;
+                this.tang = false;
+                this.dungGiaThamChieu = true;
+                this.giam = false;
+                this.giamSan = false;
+            }
+        }
+        else {
+            if (ma.getGia().getDongCua() == ma.getGia().getTran()){
+                this.tangTran = true;
+                this.tang = true;
+                this.dungGiaThamChieu = false;
+                this.giam = false;
+                this.giamSan = false;
+            }
+            else if (ma.getGia().getDongCua() > ma.getGia().getThamChieu()){
+                this.tangTran = false;
+                this.tang = true;
+                this.dungGiaThamChieu = false;
+                this.giam = false;
+                this.giamSan = false;
+            }
+            else if (ma.getGia().getDongCua() == ma.getGia().getThamChieu()){
+                this.tangTran = false;
+                this.tang = false;
+                this.dungGiaThamChieu = true;
+                this.giam = false;
+                this.giamSan = false;
+            }
+            else if (ma.getGia().getDongCua() == ma.getGia().getSan()){
+                this.tangTran = false;
+                this.tang = false;
+                this.dungGiaThamChieu = false;
+                this.giam = true;
+                this.giamSan = true;
+            }
+            else {
+                this.tangTran = false;
+                this.tang = false;
+                this.dungGiaThamChieu = false;
+                this.giam = true;
+                this.giamSan = false;
+            }
+        }
     }
 
     public boolean tangTran(){
-        if(ma.getGia().getTran() == ma.getGia().getDongCua()){
-            return true;
-        }
-        return false;
+        return this.tangTran;
     }
 
     public boolean giamSan(){
-        if (ma.getGia().getDongCua()==ma.getGia().getSan()){
-            return true;
-        }
-        return false;
+        return this.giamSan;
     }
+
     public boolean tangGia(){
-        if(ma.getGia().getThayDoiDiem() > 0) {
-            return true;
-        }
-        return false;
+        return this.tang;
     }
+
     public boolean giamGia(){
-        if(ma.getGia().getThayDoiDiem() < 0) {
-            return true;
-        }
-        return false;
+        return this.giam;
     }
+
     public boolean dungGiaThamChieu(){
-        if(ma.getGia().getDongCua() == ma.getGia().getThamChieu()) {
-            return true;
-        }
-        return false;
+        return this.dungGiaThamChieu;
     }
 
 }
