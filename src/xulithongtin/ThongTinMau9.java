@@ -18,11 +18,13 @@ public class ThongTinMau9 extends ThongTinMau{
         String tenMaTangTop = null, tenMaGiamTop = null;
         for (int i = 0; i < MAX; i++) {
             for (String tenMa : ThongTin.maChungKhoanHashMap.keySet()) {
-                if((!top5Tang.contains(tenMa)) && (max < ThongTin.maChungKhoanHashMap.get(tenMa).getGia().getTiLeThayDoi())){
+                MaChungKhoan ma = ThongTin.maChungKhoanHashMap.get(tenMa);
+                TinhChatMa tinhChatMa = new TinhChatMa(ma);
+                if((!top5Tang.contains(tenMa)) && (max < ma.getGia().getTiLeThayDoi()) && (tinhChatMa.tangGia())){
                     max = ThongTin.maChungKhoanHashMap.get(tenMa).getGia().getTiLeThayDoi();
                     tenMaTangTop = tenMa;
                 }
-                if((!top5Giam.contains(tenMa)) && (min > ThongTin.maChungKhoanHashMap.get(tenMa).getGia().getTiLeThayDoi())) {
+                if((!top5Giam.contains(tenMa)) && (min < ma.getGia().getTiLeThayDoi()) && (tinhChatMa.giamGia())) {
                     min = ThongTin.maChungKhoanHashMap.get(tenMa).getGia().getTiLeThayDoi();
                     tenMaGiamTop = tenMa;
                 }
