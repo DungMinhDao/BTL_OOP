@@ -13,6 +13,8 @@ import java.util.Date;
 
 import thongtin.*;
 
+import static java.lang.StrictMath.abs;
+
 public class LayDuLieuVeMa {
     private static final String COMMA = ","; // Split by comma
     public static void layMa(File fn) {
@@ -32,8 +34,8 @@ public class LayDuLieuVeMa {
                     float dongCua = Float.parseFloat(splitData[5]);
                     float caoNhat = Float.parseFloat(splitData[6]);
                     float thapNhat = Float.parseFloat(splitData[7]);
-                    float thayDoiGia = Float.parseFloat(splitData[9]);
-                    float tiLeThayDoiGia = Float.parseFloat(splitData[10]);
+                    float thayDoiGia = abs(Float.parseFloat(splitData[9]));
+                    float tiLeThayDoiGia = abs(Float.parseFloat(splitData[10]));
                     long khoiLuongKhopLenh = Long.parseLong(splitData[11]);
                     long giaTriKhopLenh = Long.parseLong(splitData[12]);
                     long khoiLuongThoaThuan = Long.parseLong(splitData[13]);

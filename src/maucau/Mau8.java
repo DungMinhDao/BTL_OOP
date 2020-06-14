@@ -23,8 +23,8 @@ public class Mau8 extends MauCau{
         Collections.sort(this.nhomNganhGiam, new Comparator<NhomNganh>() {
             @Override
             public int compare(NhomNganh n1, NhomNganh n2){
-                if(n1.getTongThayDoi() < n2.getTongThayDoi()) return -1;
-                else if(n1.getTongThayDoi() > n2.getTongThayDoi()) return 1;
+                if(n1.getTongThayDoi() < n2.getTongThayDoi()) return 1;
+                else if(n1.getTongThayDoi() > n2.getTongThayDoi()) return -1;
                 else return 0;
             }
         });
@@ -51,7 +51,7 @@ public class Mau8 extends MauCau{
 
     public void cau2(){
         String s = "Nhóm ngành giảm mạnh nhất là nhóm ngành ";
-        s = s + nhomNganhGiam.get(0).getTenNhomNganh() + " với mức giảm " + (-nhomNganhGiam.get(0).getTongThayDoi()) + " điểm.";
+        s = s + nhomNganhGiam.get(0).getTenNhomNganh() + " với mức giảm " + (nhomNganhGiam.get(0).getTongThayDoi()) + " điểm.";
 
         tapCau.add(s);
     }

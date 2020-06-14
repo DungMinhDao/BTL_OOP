@@ -36,7 +36,7 @@ public class Mau3 extends MauCau {
                 s = s + ", " + nhomNganHangGiam.get(i).getTenMa();
             }
 
-            s = s + " trượt giá " + (-minGiam) + "-" + (-maxGiam) + " đồng.";
+            s = s + " trượt giá " + (minGiam) + "-" + (maxGiam) + " đồng.";
             tapCau.add(s);
         }
     }

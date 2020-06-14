@@ -53,7 +53,7 @@ public class Mau6 extends MauCau {
         s = s + nhomTangGia.get(length-1).getTenMa() + " của "
                 + nhomTangGia.get(length-1).getTenCongTi() + ", tăng "
                 + nhomTangGia.get(length-1).getGia().getTiLeThayDoi()
-                + " lên " + nhomTangGia.get(length-1).getGia().getDongCua();
+                + "% lên " + nhomTangGia.get(length-1).getGia().getDongCua();
         tapCau.add(s);
     }
 

@@ -1,5 +1,7 @@
 package thongtin;
 
+import xulithongtin.TinhChatMa;
+
 import java.util.ArrayList;
 public class NhomVN30 {
     public static ArrayList<String> tenMA = new ArrayList<String>();
@@ -11,10 +13,11 @@ public class NhomVN30 {
     public NhomVN30(){
         for(int i = 0; i < tenMA.size(); ++i){
             MaChungKhoan ma = ThongTin.maChungKhoanHashMap.get(tenMA.get(i));
-            if(ma.getGia().getThayDoiDiem() < 0) {
+            TinhChatMa tinhChatMa = new TinhChatMa(ma);
+            if(tinhChatMa.giamGia()) {
                 soMaGiam += 1;
             }
-            else if(ma.getGia().getThayDoiDiem() > 0){
+            else if(tinhChatMa.tangGia()){
                 soMaTang += 1;
             }
             else {
