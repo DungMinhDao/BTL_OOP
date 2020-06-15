@@ -1,6 +1,7 @@
 package laydulieu;
 
 import thongtin.NhomNganh;
+import thongtin.NhomVN30;
 import thongtin.ThongTin;
 
 import java.io.BufferedReader;
@@ -17,6 +18,7 @@ public class LayDuLieuVeCongTi {
         try {
             String line;
             br = new BufferedReader(new FileReader(fn));
+            br.readLine();
             while (true) {
                 line = br.readLine();
                 if (line != null) {
@@ -24,6 +26,7 @@ public class LayDuLieuVeCongTi {
                     String tenMa = splitData[1];
                     String tenCongTi = splitData[2];
                     String tenNhomNganh = splitData[3];
+                    String vn30 = splitData[4];
                     if(ThongTin.maChungKhoanHashMap.containsKey(tenMa)) {
                         ThongTin.maChungKhoanHashMap.get(tenMa).setTenCongTi(tenCongTi);
                         if (ThongTin.nhomNganhHashMap.containsKey(tenNhomNganh)) {
@@ -31,6 +34,9 @@ public class LayDuLieuVeCongTi {
                         } else {
                             ThongTin.nhomNganhHashMap.put(tenNhomNganh, new NhomNganh(tenMa, tenNhomNganh));
                         }
+                    }
+                    if(vn30.equals("1")){
+                        NhomVN30.tenMA.add(tenMa);
                     }
                 } else break;
             }
