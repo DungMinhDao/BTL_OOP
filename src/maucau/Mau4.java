@@ -40,7 +40,7 @@ public class Mau4 extends MauCau  {
             }
             s += nhomBlueChipsGiam.get(i).getTenMa() + " giảm "
                     + (nhomBlueChipsGiam.get(i).getGia().getThayDoiDiem() * 1000) + " đồng, ";
-            s += "đứng giá"
+            s += "đứng giá";
         }
 
         for(int i = 0; i < nhomBlueChipsDungGia.size(); ++i){
