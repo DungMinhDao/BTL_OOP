@@ -24,32 +24,30 @@ public class Mau4 extends MauCau  {
     }
 
     public void cau1(){
-        String s = "Trong nhóm bluechips, ";
+        String s = "Trong nhóm bluechips";
         for(int i = 0; i < nhomBlueChipsTang.size(); ++i){
             if(i == 3) {
                 break;
             }
-            s += nhomBlueChipsTang.get(i).getTenMa() + " tăng "
-                    + nhomBlueChipsTang.get(i).getGia().getThayDoiDiem() * 1000 + " đồng, ";
-            s += "đứng giá";
+            s += ", " + nhomBlueChipsTang.get(i).getTenMa() + " tăng "
+                    + nhomBlueChipsTang.get(i).getGia().getThayDoiDiem() * 1000 + " đồng";
         }
 
         for(int i = 0; i < nhomBlueChipsGiam.size(); ++i){
             if(i == 3) {
                 break;
             }
-            s += nhomBlueChipsGiam.get(i).getTenMa() + " giảm "
-                    + (nhomBlueChipsGiam.get(i).getGia().getThayDoiDiem() * 1000) + " đồng, ";
-            s += "đứng giá";
+            s += ", " + nhomBlueChipsGiam.get(i).getTenMa() + " giảm "
+                    + (nhomBlueChipsGiam.get(i).getGia().getThayDoiDiem() * 1000) + " đồng";
         }
 
         for(int i = 0; i < nhomBlueChipsDungGia.size(); ++i){
             if(i == 3){
                 break;
             }
-            s += nhomBlueChipsDungGia.get(i) + ", ";
-            s += "đứng giá";
+            s += ", " + nhomBlueChipsDungGia.get(i).getTenMa();
         }
+        s += " đứng giá";
         tapCau.add(s);
     }
 
@@ -66,7 +64,6 @@ public class Mau4 extends MauCau  {
                         + nhomBlueChipsTang.get(i).getGia().getThayDoiDiem() * 1000 + " đồng, ";
             }
             s += "...";
-            tapCau.add(s);
         }
         else if(nhomBlueChipsGiam.size() > nhomBlueChipsTang.size()
                 && nhomBlueChipsGiam.size() > nhomBlueChipsDungGia.size()){
@@ -79,8 +76,8 @@ public class Mau4 extends MauCau  {
                         + nhomBlueChipsGiam.get(i).getGia().getThayDoiDiem() * 1000 + " đồng, ";
             }
             s += "...";
-            tapCau.add(s);
         }
+        tapCau.add(s);
     }
 
     public void cau3(){
