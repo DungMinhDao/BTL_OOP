@@ -4,6 +4,7 @@ import maucau.Mau3;
 import maucau.MauCau;
 import thongtin.MaChungKhoan;
 import thongtin.ThongTin;
+import thongtin.TinhChatMa;
 
 import java.util.ArrayList;
 

@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import thongtin.MaChungKhoan;
 import thongtin.ThongTin;
 
+/**
+ * Lớp Mau9 mô hình các câu mô tả dữ liệu về top 5 các cổ phiếu tăng, giảm giá
+ *
+ * @see MauCau
+ * @author 
+ */
 public class Mau9 extends MauCau{
 
     private static String tag = "Top 5 tăng giảm";
@@ -17,123 +23,137 @@ public class Mau9 extends MauCau{
     }
 
     public void thuThapCau(){
-        cauTangTop1Loai1();
-        cauTangTop1Loai2();
-        cauTangLoai1();
-        cauTangLoai2();
-        cauTangLoai3();
-        cauTangLoai4();
-        cauTangLoai5();
-        cauGiamTop1Loai1();
-        cauGiamTop1Loai2();
-        cauGiamLoai1();
-        cauGiamLoai2();
-        cauGiamLoai3();
-        cauGiamLoai4();
-        cauGiamLoai5();
+        cau1();
+        cau2();
+        cau3();
+        cau4();
+        cau5();
+        cau6();
+        cau7();
+        cau8();
+        cau9();
+        cau10();
+        cau11();
+        cau12();
+        cau13();
+        cau14();
     }
     // Câu tăng top 1 loại 1
-    public void cauTangTop1Loai1(){
+    public void cau1(){
         MaChungKhoan ma = ThongTin.maChungKhoanHashMap.get(top5Tang.get(0));
-        tapCau.add("Đứng ở vị trí đầu tiên là cổ phiếu " + ma.getTenMa() + " của " + ma.getTenCongTi() + " với mức tăng " + ma.getGia().getTiLeThayDoi() + "%.");
+        tapCau.add("Đứng ở vị trí đầu tiên là cổ phiếu " + ma.getTenMa() + " của " + ma.getTenCongTi()
+                + " với mức tăng " + ma.getGia().getTiLeThayDoi() + "%.");
     }
 
     // Câu tăng top 1 loại 2
-    public void cauTangTop1Loai2(){
+    public void cau2(){
         MaChungKhoan ma = ThongTin.maChungKhoanHashMap.get(top5Tang.get(0));
-        tapCau.add("Đứng đầu bảng xếp hạng là " + ma.getTenMa() + " của " + ma.getTenCongTi() + " với mức tăng trưởng " + ma.getGia().getTiLeThayDoi() + "%.");
+        tapCau.add("Đứng đầu bảng xếp hạng là " + ma.getTenMa() + " của " + ma.getTenCongTi()
+                + " với mức tăng trưởng " + ma.getGia().getTiLeThayDoi() + "%.");
     }
 
     // Câu tăng thứ tự bất kỳ 1-5 loại 1
-    public void cauTangLoai1(){
+    public void cau3(){
         for (int i = 0; i < MAX; i++) {
             MaChungKhoan ma = ThongTin.maChungKhoanHashMap.get(top5Tang.get(i));
-            tapCau.add("Đứng thứ " + (i + 1) + " là cổ phiếu " + ma.getTenMa() + " của " + ma.getTenCongTi() + " với mức tăng " + ma.getGia().getTiLeThayDoi() + " %.");
+            tapCau.add("Đứng thứ " + (i + 1) + " là cổ phiếu " + ma.getTenMa() + " của " + ma.getTenCongTi()
+                    + " với mức tăng " + ma.getGia().getTiLeThayDoi() + " %.");
         }
     }
 
     // Câu tăng thứ tự bất kỳ 1-5 loại 2
-    public void cauTangLoai2(){
+    public void cau4(){
         for (int i = 0; i < MAX; i++) {
             MaChungKhoan ma = ThongTin.maChungKhoanHashMap.get(top5Tang.get(i));
-            tapCau.add("Trong đó, " + ma.getTenMa()+ " của " + ma.getTenCongTi() + " đứng ở vị trí thứ " + (i + 1) + " với mức tăng " + ma.getGia().getTiLeThayDoi() + "%.");
+            tapCau.add("Trong đó, " + ma.getTenMa()+ " của " + ma.getTenCongTi() + " đứng ở vị trí thứ " + (i + 1)
+                    + " với mức tăng " + ma.getGia().getTiLeThayDoi() + "%.");
         }
     }
 
     // Câu tăng thứ tự bất kỳ 1-5 loại 3
-    public void cauTangLoai3(){
+    public void cau5(){
         for (int i = 0; i < MAX; i++) {
             MaChungKhoan ma = ThongTin.maChungKhoanHashMap.get(top5Tang.get(i));
-            tapCau.add("Vị trí thứ " + (i + 1) + " là cổ phiếu " + ma.getTenMa() + " của " + ma.getTenCongTi() + " với mức tăng trưởng " + ma.getGia().getTiLeThayDoi() + "%.");
+            tapCau.add("Vị trí thứ " + (i + 1) + " là cổ phiếu " + ma.getTenMa() + " của " + ma.getTenCongTi()
+                    + " với mức tăng trưởng " + ma.getGia().getTiLeThayDoi() + "%.");
         }
     }
 
     // Câu tăng thứ tự bất kỳ 1-5 loại 4
-    public void cauTangLoai4(){
+    public void cau6(){
         for (int i = 0; i < MAX; i++) {
             MaChungKhoan ma = ThongTin.maChungKhoanHashMap.get(top5Tang.get(i));
-            tapCau.add("Vị trí thứ " + (i + 1) + " thuộc về cổ phiếu " + ma.getTenMa() + " của " + ma.getTenCongTi() + " với mức tăng trưởng " + ma.getGia().getTiLeThayDoi() + "%.");
+            tapCau.add("Vị trí thứ " + (i + 1) + " thuộc về cổ phiếu " + ma.getTenMa() + " của " + ma.getTenCongTi()
+                    + " với mức tăng trưởng " + ma.getGia().getTiLeThayDoi() + "%.");
         }
     }
 
     // Câu tăng thứ tự bất kỳ 1-5 loại 5
-    public void cauTangLoai5(){
+    public void cau7(){
         for (int i = 0; i < MAX; i++) {
             MaChungKhoan ma = ThongTin.maChungKhoanHashMap.get(top5Tang.get(i));
-            tapCau.add("Đứng thứ " + (i + 1) + " là " + ma.getTenMa() + " của " + ma.getTenCongTi() + " với mức tăng trưởng " + ma.getGia().getTiLeThayDoi() + "%.");
+            tapCau.add("Đứng thứ " + (i + 1) + " là " + ma.getTenMa() + " của " + ma.getTenCongTi()
+                    + " với mức tăng trưởng " + ma.getGia().getTiLeThayDoi() + "%.");
         }
     }
 
     // Câu giảm top 1 loại 1
-    public void cauGiamTop1Loai1(){
+    public void cau8(){
         MaChungKhoan ma = ThongTin.maChungKhoanHashMap.get(top5Giam.get(0));
-        tapCau.add("Đứng ở vị trí cuối cùng là cổ phiếu " + ma.getTenMa() + " của " + ma.getTenCongTi() + " với mức giảm " + ma.getGia().getTiLeThayDoi() + "%.");
+        tapCau.add("Đứng ở vị trí cuối cùng là cổ phiếu " + ma.getTenMa() + " của " + ma.getTenCongTi()
+                + " với mức giảm " + ma.getGia().getTiLeThayDoi() + "%.");
 
     }
 
     // Câu giảm top 1 loại 2
-    public void cauGiamTop1Loai2(){
+    public void cau9(){
         MaChungKhoan ma = ThongTin.maChungKhoanHashMap.get(top5Giam.get(0));
-        tapCau.add("Đứng cuối bảng xếp hạng là " + ma.getTenMa() + " của " + ma.getTenCongTi() + " với mức giảm " + ma.getGia().getTiLeThayDoi() + "%.");
+        tapCau.add("Đứng cuối bảng xếp hạng là " + ma.getTenMa() + " của " + ma.getTenCongTi()
+                + " với mức giảm " + ma.getGia().getTiLeThayDoi() + "%.");
     }
 
     // Câu giảm thứ tự bất kỳ 1-5 loại 1
-    public void cauGiamLoai1(){
+    public void cau10(){
         for ( int i = 0; i < MAX ; i++) {
             MaChungKhoan ma = ThongTin.maChungKhoanHashMap.get(top5Giam.get(i));
-            tapCau.add("Đứng thứ " + (i + 1) + " là cổ phiếu " + ma.getTenMa() + " của " + ma.getTenCongTi() + " với mức giảm " + ma.getGia().getTiLeThayDoi() + " %.");
+            tapCau.add("Đứng thứ " + (i + 1) + " là cổ phiếu " + ma.getTenMa() + " của " + ma.getTenCongTi()
+                    + " với mức giảm " + ma.getGia().getTiLeThayDoi() + " %.");
         }
     }
 
     // Câu giảm thứ tự bất kỳ 1-5 loại 2
-    public void cauGiamLoai2(){
+    public void cau11(){
         for (int i = 0; i < MAX; i++) {
             MaChungKhoan ma = ThongTin.maChungKhoanHashMap.get(top5Giam.get(i));
-            tapCau.add("Trong đó, " + ma.getTenMa() + " của " + ma.getTenCongTi() + " đứng ở vị trí thứ " + (i + 1) + " với mức giảm " + ma.getGia().getTiLeThayDoi() + "%.");
+            tapCau.add("Trong đó, " + ma.getTenMa() + " của " + ma.getTenCongTi() + " đứng ở vị trí thứ "
+                    + (i + 1) + " với mức giảm " + ma.getGia().getTiLeThayDoi() + "%.");
         }
     }
 
     // Câu giảm thứ tự bất kỳ 1-5 loại 3
-    public void cauGiamLoai3(){
+    public void cau12(){
         for (int i = 0; i < MAX; i++) {
             MaChungKhoan ma = ThongTin.maChungKhoanHashMap.get(top5Giam.get(i));
-            tapCau.add("Vị trí thứ " + (i + 1) + " là cổ phiếu " + ma.getTenMa() + " của " + ma.getTenCongTi() + " với mức giảm " + ma.getGia().getTiLeThayDoi() + "%.");
+            tapCau.add("Vị trí thứ " + (i + 1) + " là cổ phiếu " + ma.getTenMa() + " của "
+                    + ma.getTenCongTi() + " với mức giảm " + ma.getGia().getTiLeThayDoi() + "%.");
         }
     }
 
     // Câu giảm thứ tự bất kỳ 1-5 loại 4
-    public void cauGiamLoai4(){
+    public void cau13(){
         for (int i = 0; i < MAX; i++) {
             MaChungKhoan ma = ThongTin.maChungKhoanHashMap.get(top5Giam.get(i));
-            tapCau.add("Vị trí thứ " + (i + 1) + " thuộc về cổ phiếu " + ma.getTenMa() + " của " + ma.getTenCongTi() + " với mức giảm " + ma.getGia().getTiLeThayDoi() + "%.");
+            tapCau.add("Vị trí thứ " + (i + 1) + " thuộc về cổ phiếu " + ma.getTenMa() + " của "
+                    + ma.getTenCongTi() + " với mức giảm " + ma.getGia().getTiLeThayDoi() + "%.");
         }
     }
 
     // Câu giảm thứ tự bất kỳ 1-5 loại 5
-    public void cauGiamLoai5(){
+    public void cau14(){
         for (int i = 0; i < MAX; i++) {
             MaChungKhoan ma = ThongTin.maChungKhoanHashMap.get(top5Giam.get(i));
-            tapCau.add("Đứng thứ " + (i + 1) + " là " + ma.getTenMa() + " của " + ma.getTenCongTi() + " với mức giảm " + ma.getGia().getTiLeThayDoi() + "%.");
+            tapCau.add("Đứng thứ " + (i + 1) + " là " + ma.getTenMa() + " của " + ma.getTenCongTi()
+                    + " với mức giảm " + ma.getGia().getTiLeThayDoi() + "%.");
         }
     }
 

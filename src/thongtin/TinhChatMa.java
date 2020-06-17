@@ -1,8 +1,14 @@
-package xulithongtin;
+package thongtin;
 
 import thongtin.MaChungKhoan;
 import thongtin.ThongTin;
 
+/**
+ * Lớp TinhChatMa xác định tính chất các mã được đưa vào
+ *
+ * @see MaChungKhoan
+ * @author
+ */
 public class TinhChatMa {
     private MaChungKhoan ma;
     private boolean tangTran, tang, dungGiaThamChieu, giam, giamSan;

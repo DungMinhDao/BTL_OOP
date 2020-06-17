@@ -6,6 +6,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+/**
+ * Lớp Mau6 mô hình các câu mô tả dữ liệu về các cổ phiếu tăng giá
+ *
+ * @see MauCau
+ * @author
+ */
 public class Mau6 extends MauCau {
     private static String tag = "Nhóm tăng giá";
     private ArrayList<MaChungKhoan> nhomTangGia;
@@ -32,7 +38,9 @@ public class Mau6 extends MauCau {
 
     public void cau1(){
         String s = "Phía tăng giá, dẫn đầu là ";
-        s = s + nhomTangGia.get(0).getTenMa() + " của " + nhomTangGia.get(0).getTenCongTi() + ", tăng " + nhomTangGia.get(0).getGia().getTiLeThayDoi() + " lên đến " + nhomTangGia.get(0).getGia().getDongCua();
+        s = s + nhomTangGia.get(0).getTenMa() + " của " + nhomTangGia.get(0).getTenCongTi() + ", tăng "
+                + nhomTangGia.get(0).getGia().getTiLeThayDoi() + " % lên đến " +
+                nhomTangGia.get(0).getGia().getDongCua() + " nghìn đồng.";
         tapCau.add(s);
     }
 
@@ -53,7 +61,7 @@ public class Mau6 extends MauCau {
         s = s + nhomTangGia.get(length-1).getTenMa() + " của "
                 + nhomTangGia.get(length-1).getTenCongTi() + ", tăng "
                 + nhomTangGia.get(length-1).getGia().getTiLeThayDoi()
-                + "% lên " + nhomTangGia.get(length-1).getGia().getDongCua();
+                + "% lên " + nhomTangGia.get(length-1).getGia().getDongCua() + " nghìn đồng.";
         tapCau.add(s);
     }
 

@@ -1,16 +1,21 @@
 package thongtin;
 
+/**
+ * Lớp Gia lưu trữ các thông tin về giá
+ *
+ * @author
+ */
 public class Gia {
     private float thamChieu, moCua, dongCua, tran, san;
-    private float thayDoiDiem, tiLeThayDoi;
+    private float thayDoi, tiLeThayDoi;
 
-    public Gia(float thamChieu, float moCua, float dongCua, float tran, float san, float thayDoiDiem, float tiLeThayDoi){
+    public Gia(float thamChieu, float moCua, float dongCua, float tran, float san, float thayDoi, float tiLeThayDoi){
         this.thamChieu = thamChieu;
         this.moCua = moCua;
         this.dongCua = dongCua;
         this.tran = tran;
         this.san = san;
-        this.thayDoiDiem = thayDoiDiem;
+        this.thayDoi = thayDoi;
         this.tiLeThayDoi = tiLeThayDoi;
     }
 
@@ -34,8 +39,8 @@ public class Gia {
         return san;
     }
 
-    public float getThayDoiDiem() {
-        return thayDoiDiem;
+    public float getThayDoi() {
+        return thayDoi;
     }
 
     public float getTiLeThayDoi() {

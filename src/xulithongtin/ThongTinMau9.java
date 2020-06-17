@@ -5,6 +5,7 @@ import maucau.Mau9;
 import maucau.MauCau;
 import thongtin.MaChungKhoan;
 import thongtin.ThongTin;
+import thongtin.TinhChatMa;
 
 public class ThongTinMau9 extends ThongTinMau{
 

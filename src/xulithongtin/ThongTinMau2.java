@@ -4,8 +4,11 @@ import maucau.Mau2;
 import maucau.MauCau;
 import thongtin.MaChungKhoan;
 import thongtin.ThongTin;
+import thongtin.TinhChatMa;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class ThongTinMau2 extends ThongTinMau {
 
@@ -27,6 +30,35 @@ public class ThongTinMau2 extends ThongTinMau {
                 maChungKhoanThamChieu.add(ma);
             }
         }
+        Collections.sort(maChungKhoanTang, new Comparator<MaChungKhoan>() {
+            @Override
+            public int compare(MaChungKhoan n1, MaChungKhoan n2){
+                if(n1.getGia().getThayDoi() < n2.getGia().getThayDoi()) {
+                    return 1;
+                }
+                else if(n1.getGia().getThayDoi() > n2.getGia().getThayDoi()) {
+                    return -1;
+                }
+                else {
+                    return 0;
+                }
+            }
+        });
+
+        Collections.sort(maChungKhoanGiam, new Comparator<MaChungKhoan>() {
+            @Override
+            public int compare(MaChungKhoan n1, MaChungKhoan n2){
+                if(n1.getGia().getThayDoi() < n2.getGia().getThayDoi()) {
+                    return 1;
+                }
+                else if(n1.getGia().getThayDoi() > n2.getGia().getThayDoi()) {
+                    return -1;
+                }
+                else {
+                    return 0;
+                }
+            }
+        });
         return new Mau2(maChungKhoanTang, maChungKhoanGiam, maChungKhoanThamChieu);
     }
 }

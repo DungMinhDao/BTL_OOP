@@ -1,7 +1,11 @@
 package maucau;
 
-import java.util.ArrayList;
-
+/**
+ * Lớp Mau1 mô hình mẫu câu mô tả dữ liệu về toàn cảnh thị trường chứng khoán.
+ *
+ * @see MauCau
+ * @author
+ */
 public class Mau1 extends MauCau {
     private static String tag = "Toàn thị trường";
     int soMaTang, soMaGiam, soMaDungGia, soMaTangTran, soMaGiamSan, soMa;
@@ -24,12 +28,8 @@ public class Mau1 extends MauCau {
 
     public void cau1(){
         String s = "Thị trường đóng cửa với " + soMaTang + " mã tăng giá trong đó có "
-                + soMaTangTran + " mã tăng trần; " + soMaDungGia + " mã đứng giá, "
+                + soMaTangTran + " mã tăng trần, " + soMaDungGia + " mã đứng giá, "
                 + soMaGiam + " mã giảm giá trong đó có " + soMaGiamSan + " mã giảm sàn.";
-        // String s = String.format("Thị trường đóng cửa với %d mã tăng giá trong đó có %d mã tăng trần,
-        // %d mã đứng giá, %d mã giảm giá trong đó có %d mã giảm sàn.", soMaTang, soMaTangTran, soMaDungGia,
-        // soMaGiam, soMaGiamSan)
-
         tapCau.add(s);
     }
 

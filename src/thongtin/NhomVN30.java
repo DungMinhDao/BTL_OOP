@@ -1,8 +1,12 @@
 package thongtin;
 
-import xulithongtin.TinhChatMa;
-
 import java.util.ArrayList;
+
+/**
+ * Lớp NhomVN30 lưu trữ dữ liệu về nhóm VN30 trên thị trường chứng khoán.
+ *
+ * @author
+ */
 public class NhomVN30 {
     public static ArrayList<String> tenMA = new ArrayList<String>();
     private int soMaGiam = 0;
@@ -16,14 +20,15 @@ public class NhomVN30 {
             TinhChatMa tinhChatMa = new TinhChatMa(ma);
             if(tinhChatMa.giamGia()) {
                 soMaGiam += 1;
+                tongDiemThayDoi -= ma.getGia().getThayDoi();
             }
             else if(tinhChatMa.tangGia()){
                 soMaTang += 1;
+                tongDiemThayDoi += ma.getGia().getThayDoi();
             }
             else {
                 soMaThamChieu += 1;
             }
-            tongDiemThayDoi += ma.getGia().getThayDoiDiem();
         }
     }
 

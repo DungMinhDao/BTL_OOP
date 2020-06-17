@@ -1,10 +1,15 @@
 package maucau;
 
 import thongtin.MaChungKhoan;
-import thongtin.ThongTin;
 
 import java.util.ArrayList;
 
+/**
+ * Lớp Mau4 mô hình các câu mô tả dữ liệu về các cổ phiếu thuộc nhốm bluechips
+ *
+ * @see MauCau
+ * @author
+ */
 public class Mau4 extends MauCau  {
     private static String tag = "Nhóm bluechips";
     private ArrayList<MaChungKhoan> nhomBlueChipsGiam, nhomBlueChipsTang, nhomBlueChipsDungGia;
@@ -30,7 +35,7 @@ public class Mau4 extends MauCau  {
                 break;
             }
             s += ", " + nhomBlueChipsTang.get(i).getTenMa() + " tăng "
-                    + nhomBlueChipsTang.get(i).getGia().getThayDoiDiem() * 1000 + " đồng";
+                    + nhomBlueChipsTang.get(i).getGia().getThayDoi() + " đồng";
         }
 
         for(int i = 0; i < nhomBlueChipsGiam.size(); ++i){
@@ -38,7 +43,7 @@ public class Mau4 extends MauCau  {
                 break;
             }
             s += ", " + nhomBlueChipsGiam.get(i).getTenMa() + " giảm "
-                    + (nhomBlueChipsGiam.get(i).getGia().getThayDoiDiem() * 1000) + " đồng";
+                    + nhomBlueChipsGiam.get(i).getGia().getThayDoi() + " đồng";
         }
 
         for(int i = 0; i < nhomBlueChipsDungGia.size(); ++i){
@@ -47,7 +52,7 @@ public class Mau4 extends MauCau  {
             }
             s += ", " + nhomBlueChipsDungGia.get(i).getTenMa();
         }
-        s += " đứng giá";
+        s += " đứng giá.";
         tapCau.add(s);
     }
 
@@ -60,10 +65,11 @@ public class Mau4 extends MauCau  {
                 if (i == 4){
                     break;
                 }
-                s += nhomBlueChipsTang.get(i).getTenMa() + " tang "
-                        + nhomBlueChipsTang.get(i).getGia().getThayDoiDiem() * 1000 + " đồng, ";
+                s += nhomBlueChipsTang.get(i).getTenMa() + " tăng "
+                        + nhomBlueChipsTang.get(i).getGia().getThayDoi() + " đồng, ";
             }
             s += "...";
+            tapCau.add(s);
         }
         else if(nhomBlueChipsGiam.size() > nhomBlueChipsTang.size()
                 && nhomBlueChipsGiam.size() > nhomBlueChipsDungGia.size()){
@@ -72,12 +78,12 @@ public class Mau4 extends MauCau  {
                 if (i == 4){
                     break;
                 }
-                s += nhomBlueChipsGiam.get(i).getTenMa() + " tang "
-                        + nhomBlueChipsGiam.get(i).getGia().getThayDoiDiem() * 1000 + " đồng, ";
+                s += nhomBlueChipsGiam.get(i).getTenMa() + " tăng "
+                        + nhomBlueChipsGiam.get(i).getGia().getThayDoi() + " đồng, ";
             }
             s += "...";
+            tapCau.add(s);
         }
-        tapCau.add(s);
     }
 
     public void cau3(){
@@ -86,8 +92,8 @@ public class Mau4 extends MauCau  {
         }
         String s = "Nhóm cổ phiếu bluechips không đột biến, ";
         for(int i = 0; i < nhomBlueChipsTang.size(); ++i){
-            float thaydoigia = nhomBlueChipsTang.get(i).getGia().getThayDoiDiem();
-            if(thaydoigia * 1000 <= 1000){
+            float thaydoigia = nhomBlueChipsTang.get(i).getGia().getThayDoi();
+            if(thaydoigia <= 1000){
                 s += nhomBlueChipsTang.get(i).getTenMa() + " tăng nhẹ " + thaydoigia + " đồng, ";
             }
         }
@@ -98,8 +104,8 @@ public class Mau4 extends MauCau  {
         s += " đứng giá";
 
         for(int i = 0; i < nhomBlueChipsGiam.size(); ++i){
-            float thaydoigia = - nhomBlueChipsGiam.get(i).getGia().getThayDoiDiem();
-            if(thaydoigia * 1000 <= 1000) {
+            float thaydoigia = - nhomBlueChipsGiam.get(i).getGia().getThayDoi();
+            if(thaydoigia <= 1000) {
                 s += ", " + nhomBlueChipsGiam.get(i).getTenMa() + " giảm nhẹ " + thaydoigia + " đồng";
             }
         }

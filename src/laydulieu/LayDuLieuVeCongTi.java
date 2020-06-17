@@ -9,10 +9,21 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-import java.util.HashMap;
-
+/**
+ * Lớp LayDuLieuVeCongTi lấy dữ liệu của mỗi công ti từ file CSV.
+ *
+ * @author Phạm Trần Anh
+ */
 public class LayDuLieuVeCongTi {
     private static final String COMMA = ","; // Split by comma
+
+    /**
+     * Phương thức layThongTinCongTi lấy dữ liệu từ đường dẫn fn và lưu thông tin
+     * vào các HashMap trong lớp ThongTin thuộc package thongtin.
+     * @param fn Đường dẫn tới file CSV chứa thông tin cần đọc
+     *
+     * @see ThongTin
+     */
     public static void layThongTinCongTi(File fn){
         BufferedReader br = null;
         try {

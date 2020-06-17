@@ -4,6 +4,12 @@ import thongtin.ThongTin;
 
 import java.util.ArrayList;
 
+/**
+ * Lớp Mau10  mô hình các câu mô tả dữ liệu về nhóm cổ phiếu trong danh mục thoái vốn
+ *
+ * @see MauCau
+ * @author
+ */
 public class Mau10 extends MauCau{
 
     private static String tag = "Nhóm cố phiếu trong danh mục thoái vốn";
@@ -13,7 +19,8 @@ public class Mau10 extends MauCau{
     private ArrayList<String> danhSachGiamSau;
     private ArrayList<String> danhSachGiam;
 
-    public Mau10(ArrayList<String> danhSachTangManh, ArrayList<String> danhSachTang, ArrayList<String> danhSachGiamSau, ArrayList<String> danhSachGiam){
+    public Mau10(ArrayList<String> danhSachTangManh, ArrayList<String> danhSachTang, ArrayList<String> danhSachGiamSau,
+                 ArrayList<String> danhSachGiam){
         this.danhSachTangManh = danhSachTangManh;
         this.danhSachTang = danhSachTang;
         this.danhSachGiamSau = danhSachGiamSau;
@@ -121,13 +128,15 @@ public class Mau10 extends MauCau{
 
     public void cau1(){
         if (danhSachTangManh.size() > 1) {
-            tapCau.add("Các cổ phiếu trong danh mục thoái vốn của SCIC như " + getDanhSachTangManh() + " vẫn tiếp tục tăng mạnh.");
+            tapCau.add("Các cổ phiếu trong danh mục thoái vốn của SCIC như " + getDanhSachTangManh()
+                    + " vẫn tiếp tục tăng mạnh.");
         }
     }
 
     public void cau2(){
         if (danhSachGiamSau.size() > 1) {
-            tapCau.add("Các cổ phiếu trong danh mục thoái vốn của SCIC như " + getDanhSachGiamSau() + " vẫn tiếp tục giảm sâu.");
+            tapCau.add("Các cổ phiếu trong danh mục thoái vốn của SCIC như " + getDanhSachGiamSau()
+                    + " vẫn tiếp tục giảm sâu.");
         }
     }
 
@@ -140,7 +149,9 @@ public class Mau10 extends MauCau{
                     break;
                 }
             }
-            tapCau.add("Các cổ phiếu trong danh mục SCIC thoái vốn như " + getDanhSachTang() + " tiếp tục tăng điểm, chỉ có " + tenMaKhongTang + " giảm " + (ThongTin.maChungKhoanHashMap.get(tenMaKhongTang).getGia().getThayDoiDiem() * 1000) + " đồng.");
+            tapCau.add("Các cổ phiếu trong danh mục SCIC thoái vốn như " + getDanhSachTang()
+                    + " tiếp tục tăng điểm, chỉ có " + tenMaKhongTang + " giảm "
+                    + ThongTin.maChungKhoanHashMap.get(tenMaKhongTang).getGia().getThayDoi() + " đồng.");
         }
     }
 
@@ -153,35 +164,41 @@ public class Mau10 extends MauCau{
                     break;
                 }
             }
-            tapCau.add("Các cổ phiếu trong danh mục SCIC thoái vốn như " + getDanhSachGiam() + " tiếp tục giảm điểm, chỉ có " + tenMaKhongGiam + " tăng " + (ThongTin.maChungKhoanHashMap.get(tenMaKhongGiam).getGia().getThayDoiDiem() * 1000) + " đồng.");
+            tapCau.add("Các cổ phiếu trong danh mục SCIC thoái vốn như " + getDanhSachGiam()
+                    + " tiếp tục giảm điểm, chỉ có " + tenMaKhongGiam + " tăng "
+                    + (ThongTin.maChungKhoanHashMap.get(tenMaKhongGiam).getGia().getThayDoi() * 1000) + " đồng.");
         }
     }
 
     public void cau5(){
         if ((danhSachTangManh.size() > 1) && (danhSachTangManh.size() < danhSachThoaiVon.length)){
-            tapCau.add("Ngoài ra, các cổ phiếu trong danh mục thoái vốn của SCIC như " + getDanhSachTangManh() + " cũng tăng mạnh, ngoại trừ " + getDanhSachKhongTangManh() + ".");
+            tapCau.add("Ngoài ra, các cổ phiếu trong danh mục thoái vốn của SCIC như " + getDanhSachTangManh()
+                    + " cũng tăng mạnh, ngoại trừ " + getDanhSachKhongTangManh() + ".");
         }
     }
 
     public void cau6(){
         if ((danhSachGiamSau.size() > 1) && (danhSachGiamSau.size() < danhSachThoaiVon.length)){
-            tapCau.add("Ngoài ra, các cổ phiếu trong danh mục thoái vốn của SCIC như " + getDanhSachGiam() + " cũng giảm sâu, ngoại trừ " + getDanhSachKhongGiamSau() + ".");
+            tapCau.add("Ngoài ra, các cổ phiếu trong danh mục thoái vốn của SCIC như " + getDanhSachGiam()
+                    + " cũng giảm sâu, ngoại trừ " + getDanhSachKhongGiamSau() + ".");
         }
     }
 
     public void cau7(){
         if (danhSachTangManh.size() > 1){
-            tapCau.add("Tương tự, các cổ phiếu trong danh mục thoái vốn Nhà nước như " + getDanhSachTangManh() + " cũng tăng mạnh.");
+            tapCau.add("Tương tự, các cổ phiếu trong danh mục thoái vốn Nhà nước như " + getDanhSachTangManh()
+                    + " cũng tăng mạnh.");
         }
     }
 
     public void cau8(){
         if (danhSachGiamSau.size() > 1){
-            tapCau.add("Tương tự, các cổ phiếu trong danh mục thoái vốn Nhà nước như " + getDanhSachGiamSau() + " cũng giảm sâu.");
+            tapCau.add("Tương tự, các cổ phiếu trong danh mục thoái vốn Nhà nước như " + getDanhSachGiamSau()
+                    + " cũng giảm sâu.");
         }
     }
 
     public void cau9(){
-        tapCau.add("Các cổ phiếu tâm điểm thoái vốn 2020 có thể kể tới như " + getDanhSachThoaiVon() + " ….");
+        tapCau.add("Các cổ phiếu tâm điểm thoái vốn 2020 có thể kể tới như " + getDanhSachThoaiVon() + " ...");
     }
 }

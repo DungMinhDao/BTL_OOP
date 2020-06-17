@@ -1,5 +1,10 @@
 package thongtin;
 
+/**
+ * Lớp GiaoDich lưu trữ các thông tin về giao dịch trong ngày
+ *
+ * @author
+ */
 public class GiaoDich {
     private long khoiLuongKhopLenh, khoiLuongThoaThuan, giaTriKhopLenh, giaTriThoaThuan;
 
@@ -18,10 +23,10 @@ public class GiaoDich {
     }
 
 
-    public long tongKhoiLuong(){
+    public long getTongKhoiLuong(){
         return getKhoiLuongKhopLenh() + getKhoiLuongThoaThuan();
     }
-    public long tongGiaTri(){
+    public long getTongGiaTri(){
         return getGiaTriKhopLenh() + getGiaTriThoaThuan();
     }
 

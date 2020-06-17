@@ -3,6 +3,14 @@ package thongtin;
 import java.time.LocalDate;
 import java.util.Date;
 
+/**
+ * Lớp MaChungKhoan lưu trữ dữ liệu về các mã chứng khoán theo ngày
+ *
+ * @see Gia
+ * @see GiaoDich
+ * @see java.util.Date
+ * @author
+ */
 public class MaChungKhoan {
     private String tenMa, tenCongTi;
     private Date thoiGian;

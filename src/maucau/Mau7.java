@@ -6,6 +6,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+/**
+ * Lớp Mau7 mô hình các câu mô tả dữ liệu về các cổ phiếu nhóm giảm giá
+ *
+ * @see MauCau
+ * @author
+ */
 public class Mau7 extends MauCau {
     private static String tag = "Nhóm giảm giá";
     private ArrayList<MaChungKhoan> nhomGiamGia;
@@ -31,25 +37,29 @@ public class Mau7 extends MauCau {
 
     public void cau1(){
         String s = "Phía giảm giá, dẫn đầu là ";
-        s = s + nhomGiamGia.get(0).getTenMa() + " của " + nhomGiamGia.get(0).getTenCongTi() + ", giảm " + nhomGiamGia.get(0).getGia().getTiLeThayDoi() + "% xuống " + nhomGiamGia.get(0).getGia().getDongCua();
+        s = s + nhomGiamGia.get(0).getTenMa() + " của " + nhomGiamGia.get(0).getTenCongTi() + ", giảm "
+                + nhomGiamGia.get(0).getGia().getTiLeThayDoi() + "% xuống "
+                + nhomGiamGia.get(0).getGia().getDongCua() + " nghìn đồng.";
         tapCau.add(s);
     }
 
     public void cau2(){
         String s = "Nhóm giảm giá cũng có sự góp mặt của một số mã đáng chú khác như ";
-        int length = nhomGiamGia.size(), i;
-        length = Math.min(length, 5);
-        for(i = 1; i < length; i++){
+        int length = Math.min(nhomGiamGia.size(), 6), i;
+
+        for(i = 1; i < length - 1; i++){
             s = s + nhomGiamGia.get(i).getTenMa() + ", ";
         }
-        s = s + "...";
+        s = s + nhomGiamGia.get(length-1).getTenMa() + "....";
         tapCau.add(s);
     }
 
     public void cau3(){
         String s = "Phía giảm giá, mã có lượng giảm thấp nhất là ";
         int length = nhomGiamGia.size();
-        s = s + nhomGiamGia.get(length-1).getTenMa() + " của " + nhomGiamGia.get(length-1).getTenCongTi() + ", giảm " + nhomGiamGia.get(length-1).getGia().getTiLeThayDoi() + "% xuống " + nhomGiamGia.get(length-1).getGia().getDongCua();
+        s = s + nhomGiamGia.get(length-1).getTenMa() + " của " + nhomGiamGia.get(length-1).getTenCongTi() + ", giảm "
+                + nhomGiamGia.get(length-1).getGia().getTiLeThayDoi() + "% xuống "
+                + nhomGiamGia.get(length-1).getGia().getDongCua() + " nghìn đồng.";
         tapCau.add(s);
     }
     public static String getTag() {

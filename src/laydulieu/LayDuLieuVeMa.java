@@ -15,8 +15,21 @@ import thongtin.*;
 
 import static java.lang.StrictMath.abs;
 
+/**
+ * Lớp LayDuLieuVeMa lấy dữ liệu về một ngày giao dịch của các mã từ file CSV
+ *
+ * @author Phạm Trần Anh
+ */
 public class LayDuLieuVeMa {
     private static final String COMMA = ","; // Split by comma
+
+    /**
+     * Phương thức layMa lấy dữ liệu theo đường dẫn fn và lưu thông tin vào
+     * các HasMap trong lớp ThongTin thuộc package thongtin.
+     * @param fn Đường đẫn tới file CSV chứa thông tin cần đọc.
+     *
+     * @see ThongTin
+     */
     public static void layMa(File fn) {
         BufferedReader br = null;
         try {
