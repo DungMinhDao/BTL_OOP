@@ -29,7 +29,7 @@ public class Mau5 extends MauCau {
     }
 
     public void cau1(){
-        if(VN30.getSoMaTang() <= 5){
+        if(VN30.getSoMaTang() <= 5 && VN30.getSoMaTang() > 0){
             String s = "Trong nhóm VN30 có " + VN30.getSoMaTang() + " ma tang gia la ";
             for(int i = 0; i < VN30.getSoMaTang(); ++i) {
                 MaChungKhoan ma = ThongTin.maChungKhoanHashMap.get(NhomVN30.tenMA.get(i));
@@ -40,7 +40,7 @@ public class Mau5 extends MauCau {
             s += "còn lại đa số đều mất điểm.";
             tapCau.add(s);
         }
-        else if(VN30.getSoMaGiam() <= 5){
+        else if(VN30.getSoMaGiam() <= 5 && VN30.getSoMaGiam() > 0){
             String s = "Trong nhóm VN30 có " + VN30.getSoMaGiam() + " ma giam gia la ";
             for(int i = 0; i < VN30.getSoMaGiam(); ++i) {
                 MaChungKhoan ma = ThongTin.maChungKhoanHashMap.get(NhomVN30.tenMA.get(i));

@@ -37,6 +37,9 @@ public class Mau6 extends MauCau {
     }
 
     public void cau1(){
+        if(nhomTangGia.size() < 0){
+            return;
+        }
         String s = "Phía tăng giá, dẫn đầu là ";
         s = s + nhomTangGia.get(0).getTenMa() + " của " + nhomTangGia.get(0).getTenCongTi() + ", tăng "
                 + nhomTangGia.get(0).getGia().getTiLeThayDoi() + " % lên đến " +
@@ -45,6 +48,9 @@ public class Mau6 extends MauCau {
     }
 
     public void cau2(){
+        if(nhomTangGia.size() < 2){
+            return;
+        }
         String s = "Nhóm tăng giá cũng có sự góp mặt của một số mã đáng chú khác như ";
         int length = nhomTangGia.size(), i;
         length = Math.min(length, 5);
@@ -56,6 +62,9 @@ public class Mau6 extends MauCau {
     }
 
     public void cau3(){
+        if(nhomTangGia.size() < 2){
+            return;
+        }
         String s = "Phía tăng giá, mã có lượng tăng thấp nhất là ";
         int length = nhomTangGia.size();
         s = s + nhomTangGia.get(length-1).getTenMa() + " của "
@@ -66,6 +75,9 @@ public class Mau6 extends MauCau {
     }
 
     public void cau4(){
+        if(nhomTangGia.size() < 1){
+            return;
+        }
         String s = "Trong nhóm mã tăng có ";
         String s1 = " mã tăng trần:";
         int count = 0, i;

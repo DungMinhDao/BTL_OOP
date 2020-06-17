@@ -27,24 +27,26 @@ public class Mau3 extends MauCau {
     }
 
     public void cau1() {
-        String s = "Nhóm ngân hàng suy yếu với ";
-        int i, length = Math.min(nhomNganHangGiam.size(), 6);
-        if(length != 1){
-            float minGiam = nhomNganHangGiam.get(0).getGia().getThayDoi();
-            float maxGiam = minGiam;
-            s = s + nhomNganHangGiam.get(0).getTenMa();
-            for (i = 1; i < length; i++) {
-                if (minGiam > nhomNganHangGiam.get(i).getGia().getThayDoi()) {
-                    minGiam = nhomNganHangGiam.get(i).getGia().getThayDoi();
+        if(nhomNganHangGiam.size() > 3) {
+            String s = "Nhóm ngân hàng suy yếu với ";
+            int i, length = Math.min(nhomNganHangGiam.size(), 6);
+            if (length != 1) {
+                float minGiam = nhomNganHangGiam.get(0).getGia().getThayDoi();
+                float maxGiam = minGiam;
+                s = s + nhomNganHangGiam.get(0).getTenMa();
+                for (i = 1; i < length; i++) {
+                    if (minGiam > nhomNganHangGiam.get(i).getGia().getThayDoi()) {
+                        minGiam = nhomNganHangGiam.get(i).getGia().getThayDoi();
+                    }
+                    if (maxGiam < nhomNganHangGiam.get(i).getGia().getThayDoi()) {
+                        maxGiam = nhomNganHangGiam.get(i).getGia().getThayDoi();
+                    }
+                    s = s + ", " + nhomNganHangGiam.get(i).getTenMa();
                 }
-                if (maxGiam < nhomNganHangGiam.get(i).getGia().getThayDoi()) {
-                    maxGiam = nhomNganHangGiam.get(i).getGia().getThayDoi();
-                }
-                s = s + ", " + nhomNganHangGiam.get(i).getTenMa();
-            }
 
-            s = s + " trượt giá " + (minGiam) + "-" + (maxGiam) + " đồng.";
-            tapCau.add(s);
+                s = s + " trượt giá " + (minGiam) + "-" + (maxGiam) + " đồng.";
+                tapCau.add(s);
+            }
         }
     }
 

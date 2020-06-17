@@ -42,28 +42,34 @@ public class Mau8 extends MauCau{
     }
 
     public void cau2(){
-        String s = "Nhóm ngành giảm mạnh nhất là nhóm ngành ";
-        s = s + nhomNganhGiam.get(0).getTenNhomNganh() + " với mức giảm " + (- nhomNganhGiam.get(0).getTongThayDoi()) + " đồng.";
-
-        tapCau.add(s);
+        if(nhomNganhGiam.size() > 1) {
+            String s = "Nhóm ngành giảm mạnh nhất là nhóm ngành ";
+            s = s + nhomNganhGiam.get(0).getTenNhomNganh() + " với mức giảm " + (-nhomNganhGiam.get(0).getTongThayDoi())
+                    + " đồng.";
+            tapCau.add(s);
+        }
     }
 
     public void cau3(){
-        String s = "Nhóm ngành tăng mạnh nhất là nhóm ngành ";
-        s = s + nhomNganhTang.get(0).getTenNhomNganh() + " với mức tăng " + nhomNganhTang.get(0).getTongThayDoi() / 1000 + " điểm.";
-
-        tapCau.add(s);
+        if(nhomNganhTang.size() > 0) {
+            String s = "Nhóm ngành tăng mạnh nhất là nhóm ngành ";
+            s = s + nhomNganhTang.get(0).getTenNhomNganh() + " với mức tăng "
+                    + nhomNganhTang.get(0).getTongThayDoi() / 1000 + " điểm.";
+            tapCau.add(s);
+        }
     }
 
     public void cau4(){
         int i;
-        String s = "Các cổ phiếu có tính thị trường hơn như " + nhomNganhTang.get(1).getTenNhomNganh();
-        int length = Math.min(nhomNganhTang.size(), 6);
-        for(i = 2; i < length; i++){
-            s = s + ", " + nhomNganhTang.get(i).getTenNhomNganh();
+        if(nhomNganhTang.size() > 1) {
+            String s = "Các cổ phiếu có tính thị trường hơn như " + nhomNganhTang.get(0).getTenNhomNganh();
+            int length = Math.min(nhomNganhTang.size(), 6);
+            for (i = 1; i < length; i++) {
+                s = s + ", " + nhomNganhTang.get(i).getTenNhomNganh();
+            }
+            s = s + ",... cũng thu hút dòng tiền khá mạnh.";
+            tapCau.add(s);
         }
-        s = s + ",... cũng thu hút dòng tiền khá mạnh.";
-        tapCau.add(s);
     }
 
     public void cau5(){
@@ -111,29 +117,28 @@ public class Mau8 extends MauCau{
     }
 
     public void cau8(){
-        if(nhomNganhTang.size() == 0){
-            return;
-        }
-        long tongVonHoaThiTruong = 0;
-        for(int i = 0; i < nhomNganhGiam.size(); ++i){
-            tongVonHoaThiTruong += nhomNganhGiam.get(i).getTongVonHoa();
-        }
-        for(int i = 0; i < nhomNganhTang.size(); ++i){
-            tongVonHoaThiTruong += nhomNganhTang.get(i).getTongVonHoa();
-        }
-
-        String s = "Cụ thể, đối với TTCK, các nhóm cổ phiếu";
-        int tiLeVonHoa = 0;
-        for(int i = 0; i < nhomNganhTang.size(); ++i){
-            if(i == 3){
-                break;
+        if(nhomNganhTang.size() > 0) {
+            long tongVonHoaThiTruong = 0;
+            for (int i = 0; i < nhomNganhGiam.size(); ++i) {
+                tongVonHoaThiTruong += nhomNganhGiam.get(i).getTongVonHoa();
             }
-            s += " " + nhomNganhTang.get(i).getTenNhomNganh();
-            tiLeVonHoa += nhomNganhTang.get(i).getTongVonHoa() / tongVonHoaThiTruong;
+            for (int i = 0; i < nhomNganhTang.size(); ++i) {
+                tongVonHoaThiTruong += nhomNganhTang.get(i).getTongVonHoa();
+            }
+
+            String s = "Cụ thể, đối với TTCK, các nhóm cổ phiếu";
+            int tiLeVonHoa = 0;
+            for (int i = 0; i < nhomNganhTang.size(); ++i) {
+                if (i == 3) {
+                    break;
+                }
+                s += " " + nhomNganhTang.get(i).getTenNhomNganh();
+                tiLeVonHoa += nhomNganhTang.get(i).getTongVonHoa() / tongVonHoaThiTruong;
+            }
+            s += " hiện chiếm khoảng " + tiLeVonHoa
+                    + "% vốn hóa trên thị trường chứng khoán, do đó khi có thông tin tốt thì nhóm ngành này sẽ lập tức đẩy TTCK tăng mạnh.";
+            tapCau.add(s);
         }
-        s += " hiện chiếm khoảng " + tiLeVonHoa
-                + "% vốn hóa trên thị trường chứng khoán, do đó khi có thông tin tốt thì nhóm ngành này sẽ lập tức đẩy TTCK tăng mạnh.";
-        tapCau.add(s);
     }
 
     public String getTag(){
